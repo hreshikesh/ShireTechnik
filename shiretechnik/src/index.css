@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+/* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"); */
+
+:root {
+  --primary: #0a84ff;
+  --secondary: #00d9ff;
+
+  --bg: #07121f;
+  --surface: #0f1c2d;
+  --surface-2: #16283d;
+
+  --text: #ffffff;
+  --muted: #9aa7b8;
+
+  --border: #20354f;
+}
+
+
+
+body {
+
+  background: var(--bg);
+
+}
+
+
+
+button {
+  cursor: pointer;
+}

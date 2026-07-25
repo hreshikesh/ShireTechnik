@@ -1,0 +1,68 @@
+import { motion } from "framer-motion";
+import Container from "../../shared/Container";
+import Section from "../../shared/Section";
+import SectionHeading from "../../shared/SectionHeading";
+
+import ServiceCard from "./ServiceCard";
+import { services } from "./servicesData";
+
+// Reusing our staggering variants
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15, delayChildren: 0.1 },
+  },
+};
+
+const Services = () => {
+  return (
+    <Section className="relative z-10 bg-transparent">
+      {/* Background Tech Grid */}
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#00d9ff05_1px,transparent_1px),linear-gradient(to_bottom,#00d9ff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_20%,transparent_100%)]" />
+
+      <Container className="relative z-20">
+        <SectionHeading
+          center
+          subtitle="Core Capabilities"
+          title="Engineering Solutions Built For Modern Industries."
+          description="Deploying high-fidelity analytics and software architectures to solve the most complex industrial constraints."
+        />
+
+        {/*
+          Flexbox instead of a fixed grid so a leftover single card
+          on the last row (e.g. 3rd card with a 2-per-row layout)
+          centers itself automatically instead of hugging the left.
+        */}
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-100px" }}
+          className="mx-auto mt-16 flex max-w-6xl flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8"
+        >
+          {services.map((service) => (
+            <motion.div
+              key={service.id}
+              variants={{
+                hidden: { opacity: 0, y: 40, filter: "blur(8px)" },
+                show: {
+                  opacity: 1,
+                  y: 0,
+                  filter: "blur(0px)",
+                  transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+                },
+              }}
+              // 2 per row on mobile, 3 per row from lg up
+              className="w-[calc(50%-0.5rem)] sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1.4rem)]"
+            >
+              <ServiceCard service={service} />
+            </motion.div>
+          ))}
+        </motion.div>
+      </Container>
+    </Section>
+  );
+};
+
+export default Services;
