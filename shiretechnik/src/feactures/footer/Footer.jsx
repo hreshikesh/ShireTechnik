@@ -7,7 +7,7 @@ import { LinkedinIcon, YoutubeIcon } from "../../shared/SocialIcons";
 
 const Footer = () => {
   return (
-    <footer className="relative mt-24 sm:mt-32 overflow-hidden border-t border-white/10 bg-[#05070d]">
+    <footer className="relative mt-2  sm:mt-2 overflow-hidden border-t border-white/10 bg-[#05070d]">
       {/* Background technical grid pattern */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
         <div
