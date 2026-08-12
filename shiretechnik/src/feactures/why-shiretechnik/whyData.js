@@ -23,7 +23,7 @@ export const whyData = [
       "CFD Simulation",
       "Thermal Analysis",
       "Shape Optimization"
-    ]
+    ],
   },
 
   {

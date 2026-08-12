@@ -2,9 +2,12 @@ import { motion } from "framer-motion";
 import { ArrowDownRight } from "lucide-react";
 import logo from "../../../assets/images/logo/logofull.webp";
 
+
+
 const AboutHero = () => {
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden bg-[#05080d] text-white">
+
       {/* Engineering grid */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.07]"

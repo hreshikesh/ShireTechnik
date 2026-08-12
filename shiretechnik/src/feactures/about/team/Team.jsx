@@ -38,8 +38,10 @@ const MemberCard = ({ member, index }) => {
           <img
             src={member.image}
             alt={member.name}
-            className={`h-full w-full object-cover transition-all duration-700 ease-out ${
-              isHovered ? "scale-105 brightness-110" : "scale-100 brightness-[0.85]"
+            className={`h-full w-full object-cover transition-all duration-700 ease-out scale-100 brightness-[0.95] ${
+              isHovered
+                ? "md:scale-105 md:brightness-110"
+                : "md:scale-100 md:brightness-[0.85]"
             }`}
           />
 
@@ -48,27 +50,33 @@ const MemberCard = ({ member, index }) => {
 
           {/* Hover tint */}
           <div
-            className={`absolute inset-0 bg-gradient-to-t from-cyan-950/20 via-transparent to-transparent transition-opacity duration-500 ${
-              isHovered ? "opacity-100" : "opacity-0"
+            className={`absolute inset-0 bg-gradient-to-t from-cyan-950/20 via-transparent to-transparent opacity-0 transition-opacity duration-500 ${
+              isHovered ? "md:opacity-100" : "md:opacity-0"
             }`}
           />
 
           {/* Corner accents */}
           <span
-            className={`absolute left-4 top-4 border-l border-t border-cyan-400/60 transition-all duration-500 ${
-              isHovered ? "h-7 w-7 opacity-100" : "h-0 w-0 opacity-0"
+            className={`absolute left-4 top-4 border-l border-t border-cyan-400/60 h-7 w-7 opacity-100 transition-all duration-500 ${
+              isHovered
+                ? "md:h-7 md:w-7 md:opacity-100"
+                : "md:h-0 md:w-0 md:opacity-0"
             }`}
           />
           <span
-            className={`absolute bottom-4 right-4 border-b border-r border-cyan-400/60 transition-all duration-500 delay-75 ${
-              isHovered ? "h-7 w-7 opacity-100" : "h-0 w-0 opacity-0"
+            className={`absolute bottom-4 right-4 border-b border-r border-cyan-400/60 h-7 w-7 opacity-100 transition-all duration-500 delay-75 ${
+              isHovered
+                ? "md:h-7 md:w-7 md:opacity-100"
+                : "md:h-0 md:w-0 md:opacity-0"
             }`}
           />
 
           {/* ID badge */}
           <div
-            className={`absolute right-4 top-4 rounded-full border border-cyan-400/30 bg-[#0a0f1a]/80 px-3 py-1 backdrop-blur-sm transition-all duration-400 ${
-              isHovered ? "translate-y-0 opacity-100" : "-translate-y-2 opacity-0"
+            className={`absolute right-4 top-4 rounded-full border border-cyan-400/30 bg-[#0a0f1a]/80 px-3 py-1 backdrop-blur-sm translate-y-0 opacity-100 transition-all duration-400 ${
+              isHovered
+                ? "md:translate-y-0 md:opacity-100"
+                : "md:-translate-y-2 md:opacity-0"
             }`}
           >
             <span className="font-mono text-[9px] tracking-[0.2em] text-cyan-400">
@@ -82,8 +90,10 @@ const MemberCard = ({ member, index }) => {
               href={member.linkedin}
               target="_blank"
               rel="noreferrer"
-              className={`absolute bottom-20 right-4 flex h-10 w-10 items-center justify-center rounded-full border border-cyan-400/30 bg-[#0a0f1a]/80 text-cyan-400 backdrop-blur-sm transition-all duration-500 hover:border-cyan-400 hover:bg-cyan-400/20 hover:scale-110 active:scale-90 ${
-                isHovered ? "translate-y-0 scale-100 opacity-100" : "translate-y-4 scale-90 opacity-0"
+              className={`absolute bottom-20 right-4 flex h-10 w-10 items-center justify-center rounded-full border border-cyan-400/30 bg-[#0a0f1a]/80 text-cyan-400 backdrop-blur-sm translate-y-0 scale-100 opacity-100 transition-all duration-500 hover:border-cyan-400 hover:bg-cyan-400/20 hover:scale-110 active:scale-90 ${
+                isHovered
+                  ? "md:translate-y-0 md:scale-100 md:opacity-100"
+                  : "md:translate-y-4 md:scale-90 md:opacity-0"
               }`}
               style={{ transitionDelay: isHovered ? "100ms" : "0ms" }}
             >
@@ -96,8 +106,8 @@ const MemberCard = ({ member, index }) => {
         <div className="relative px-5 pb-6 pt-4">
           {/* Animated line */}
           <div
-            className={`absolute left-0 top-0 h-[1px] bg-gradient-to-r from-cyan-400 to-cyan-400/0 transition-all duration-600 ease-out ${
-              isHovered ? "w-full" : "w-0"
+            className={`absolute left-0 top-0 h-[1px] bg-gradient-to-r from-cyan-400 to-cyan-400/0 w-full transition-all duration-600 ease-out ${
+              isHovered ? "md:w-full" : "md:w-0"
             }`}
           />
 
@@ -106,8 +116,8 @@ const MemberCard = ({ member, index }) => {
           </h3>
 
           <p
-            className={`mt-1 text-[11px] uppercase tracking-[0.18em] transition-colors duration-500 ${
-              isHovered ? "text-cyan-400/70" : "text-slate-500"
+            className={`mt-1 text-[11px] uppercase tracking-[0.18em] text-cyan-400/70 transition-colors duration-500 ${
+              isHovered ? "md:text-cyan-400/70" : "md:text-slate-500"
             }`}
           >
             {member.designation}
@@ -118,7 +128,7 @@ const MemberCard = ({ member, index }) => {
       {/* Glow */}
       <div
         className={`pointer-events-none absolute -inset-4 -z-10 rounded-3xl bg-cyan-400 blur-[40px] transition-opacity duration-700 ${
-          isHovered ? "opacity-[0.12]" : "opacity-0"
+          isHovered ? "md:opacity-[0.12]" : "opacity-0"
         }`}
       />
     </motion.div>
@@ -126,14 +136,24 @@ const MemberCard = ({ member, index }) => {
 };
 
 const Team = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
   const firstRow = teamData.slice(0, 4);
   const secondRow = teamData.slice(4);
+  const totalSlides = teamData.length;
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % totalSlides);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
+  };
 
   return (
     <section className="relative overflow-hidden bg-[#05080d] py-10 text-white md:py-10">
       {/* Background glow */}
       <div className="pointer-events-none absolute left-1/2 top-1/3 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 animate-pulse rounded-full bg-cyan-400/[0.04] blur-[200px]" />
-
       <div className="pointer-events-none absolute bottom-0 right-1/4 h-[500px] w-[500px] animate-pulse rounded-full bg-blue-500/[0.03] blur-[180px] [animation-delay:3s]" />
 
       {/* Grid pattern */}
@@ -177,23 +197,84 @@ const Team = () => {
           <div className="mx-auto mt-10 h-[1px] w-[120px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent" />
         </motion.div>
 
-        {/* FIRST ROW - 4 cards */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {firstRow.map((member, index) => (
-            <MemberCard key={member.id} member={member} index={index} />
-          ))}
-        </div>
+        {/* MOBILE CAROUSEL */}
+        <div className="md:hidden">
+          <div className="relative overflow-hidden">
+            <motion.div
+              className="flex touch-pan-y"
+              animate={{ x: `-${currentSlide * 100}%` }}
+              transition={{ type: "spring", stiffness: 260, damping: 30 }}
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              dragElastic={0.12}
+              onDragEnd={(e, info) => {
+                if (info.offset.x < -60) nextSlide();
+                if (info.offset.x > 60) prevSlide();
+              }}
+            >
+              {teamData.map((member, index) => (
+                <div key={member.id} className="w-full shrink-0">
+                  <MemberCard member={member} index={index} />
+                </div>
+              ))}
+            </motion.div>
 
-        {/* SECOND ROW - 3 cards centered */}
-        <div className="mt-6 flex justify-center">
-          <div className="grid w-full max-w-[1050px] grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {secondRow.map((member, index) => (
-              <MemberCard
-                key={member.id}
-                member={member}
-                index={index + firstRow.length}
+            {/* Arrows */}
+            <button
+              type="button"
+              onClick={prevSlide}
+              aria-label="Previous member"
+              className="absolute left-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-[#0a0f1a]/80 text-white backdrop-blur-sm"
+            >
+              ‹
+            </button>
+
+            <button
+              type="button"
+              onClick={nextSlide}
+              aria-label="Next member"
+              className="absolute right-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-[#0a0f1a]/80 text-white backdrop-blur-sm"
+            >
+              ›
+            </button>
+          </div>
+
+          {/* Dots */}
+          <div className="mt-5 flex justify-center gap-2">
+            {teamData.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => setCurrentSlide(i)}
+                aria-label={`Go to member ${i + 1}`}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  currentSlide === i ? "w-6 bg-cyan-400" : "w-2 bg-white/20"
+                }`}
               />
             ))}
+          </div>
+        </div>
+
+        {/* DESKTOP GRID */}
+        <div className="hidden md:block">
+          {/* FIRST ROW - 4 cards */}
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {firstRow.map((member, index) => (
+              <MemberCard key={member.id} member={member} index={index} />
+            ))}
+          </div>
+
+          {/* SECOND ROW - 3 cards centered */}
+          <div className="mt-6 flex justify-center">
+            <div className="grid w-full max-w-[1050px] grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {secondRow.map((member, index) => (
+                <MemberCard
+                  key={member.id}
+                  member={member}
+                  index={index + firstRow.length}
+                />
+              ))}
+            </div>
           </div>
         </div>
 
@@ -207,7 +288,7 @@ const Team = () => {
         >
           {[
             { value: "07", label: "Team Members" },
-            { value: "50+", label: "Years Combined Experience" },
+            { value: "20+", label: "Years Combined Experience" },
             { value: "100+", label: "Projects Delivered" },
             { value: "∞", label: "Passion for Engineering" },
           ].map((stat, i) => (

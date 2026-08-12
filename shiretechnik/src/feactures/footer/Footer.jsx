@@ -4,7 +4,7 @@ import BottomBar from "./BottomBar";
 import { quickLinks, socialLinks } from "./footerData";
 import { motion } from "framer-motion";
 import { LinkedinIcon, YoutubeIcon } from "../../shared/SocialIcons";
-
+import logo from "../../assets/images/logo/logofull.webp"
 const Footer = () => {
   return (
     <footer className="relative mt-2  sm:mt-2 overflow-hidden border-t border-white/10 bg-[#05070d]">
@@ -26,7 +26,7 @@ const Footer = () => {
         {/* Company Info & Address */}
         <div>
           <img
-            src="/logo.png"
+            src={logo}
             alt="Shiretechnik"
             className="mb-8 h-14 sm:h-16 w-auto object-contain"
           />

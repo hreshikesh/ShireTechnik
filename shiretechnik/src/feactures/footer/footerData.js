@@ -4,20 +4,28 @@ export const quickLinks = [
     path: "/",
   },
   {
-    title: "About",
+    title: "About Us",
     path: "/about",
   },
   {
-    title: "Services",
-    path: "/services",
+    title: "Careers",
+    path: "/careers",
   },
   {
-    title: "Training",
-    path: "/training",
+    title: "CAE Software Solutions",
+    path: "/solutions/cae-software",
   },
   {
-    title: "Blog",
-    path: "/blog",
+    title: "CAE Service Solutions",
+    path: "/solutions/cae-services",
+  },
+  {
+    title: "Webinars",
+    path: "/resources/webinar",
+  },
+  {
+    title: "White Papers & Case Studies",
+    path: "/resources/whitepapers",
   },
   {
     title: "Contact",
@@ -31,7 +39,7 @@ export const socialLinks = [
     url: "https://www.youtube.com/channel/UCt-MTZ1xOQM-osOhmjelGYA",
   },
   {
-    icon: "linkdin",
+    icon: "linkedin",
     url: "https://www.linkedin.com/company/shiretechnik-thermalmangement/?viewAsMember=true",
   },
 ];

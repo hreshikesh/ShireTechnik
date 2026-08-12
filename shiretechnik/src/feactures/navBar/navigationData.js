@@ -23,11 +23,11 @@ const navigation = [
     children: [
       {
         label: "CAE Software Solutions",
-        path: "/services/software",
+        path: "/solutions/cae-software",
       },
       {
         label: "CAE Service Solutions",
-        path: "/services/service",
+        path: "/solutions/cae-services",
       },
     ],
   },
@@ -39,18 +39,18 @@ const navigation = [
         label: "Webinar",
         path: "/resources/webinar",
       },
-      {
-        label: "Training",
-        path: "/resources/training",
-      },
-      {
-        label: "Blog",
-        path: "/resources/blog",
-      },
-      {
-        label: "News & Events",
-        path: "/resources/news-events",
-      },
+      // {
+      //   label: "Training",
+      //   path: "/resources/training",
+      // },
+      // {
+      //   label: "Blog",
+      //   path: "/resources/blog",
+      // },
+      // {
+      //   label: "News & Events",
+      //   path: "/resources/news-events",
+      // },
       {
         label: "White Papers & Case Studies",
         path: "/resources/whitepapers",
@@ -58,10 +58,7 @@ const navigation = [
     ],
   },
 
-  {
-    label: "Appointment",
-    path: "/appointment",
-  },
+
 
   {
     label: "Contact",

@@ -69,19 +69,11 @@ const ContentPanel = ({ data }) => {
 
           {/* Action Buttons with Proper Interactive Styling */}
           <div className="mt-8 sm:mt-10 flex flex-wrap items-center gap-4">
-            <MagneticButton>
-              <a
-                href="#learn-more"
-                className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-cyan-500/25 transition-all duration-300 hover:shadow-cyan-500/40"
-              >
-                <span>Learn More</span>
-                <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
-            </MagneticButton>
+            
 
             <MagneticButton>
               <a
-                href="#contact"
+                href="/contact"
                 className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/[0.03] px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-md transition-all duration-300 hover:border-cyan-500/50 hover:bg-white/[0.08]"
               >
                 <MessageSquare size={16} className="text-cyan-400" />

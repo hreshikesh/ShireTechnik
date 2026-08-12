@@ -105,7 +105,7 @@ const ServiceCard = ({ service }) => {
         </div>
 
         {/* Hidden Interactive CTA */}
-        <div
+        {/* <div
           className={`absolute bottom-4 left-4 flex items-center gap-2 transition-all duration-500 ease-out sm:bottom-8 sm:left-8 lg:bottom-10 lg:left-10 ${
             isActive
               ? "translate-y-0 opacity-100"
@@ -119,7 +119,7 @@ const ServiceCard = ({ service }) => {
             Initialize Module
           </span>
           <ArrowRight size={12} className="ml-1 text-cyan-400 sm:h-4 sm:w-4" />
-        </div>
+        </div> */}
       </div>
     </motion.div>
   );

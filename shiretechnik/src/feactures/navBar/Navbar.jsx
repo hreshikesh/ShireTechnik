@@ -1,64 +1,113 @@
 import { useEffect, useState } from "react";
-import { ArrowRight, Sparkles } from "lucide-react";
-import Container from "../../shared/Container";
+import { Link } from "react-router-dom";
+import { ArrowRight, User, LogOut, LogIn } from "lucide-react";
 import DesktopMenu from "./DesktopMenu";
 import MobileMenu from "./MobileMenu";
+import useAuth from "../../hooks/useAuth";
+import Logo from "../../assets/images/logo/logoModel.webp";
 
 const Navbar = () => {
+  const { user, logout, openLogin } = useAuth();
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-
+    const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 py-4 transition-all duration-300">
-      <Container>
-        <nav
-          className={`relative flex items-center justify-between rounded-2xl border px-6 transition-all duration-500 ${
-            scrolled
-              ? "h-16 border-white/15 bg-[#070D18]/80 shadow-[0_8px_32px_0_rgba(0,0,0,0.36)] backdrop-blur-2xl"
-              : "h-20 border-white/5 bg-[#09131F]/40 backdrop-blur-md"
-          }`}
-        >
-          {/* Brand Logo */}
-          <a href="/" className="group flex items-center gap-3">
-            <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400 to-blue-600 p-0.5 shadow-lg shadow-cyan-500/20 transition-transform duration-300 group-hover:scale-105">
-              <div className="flex h-full w-full items-center justify-center rounded-[10px] bg-[#070D18]">
-                <Sparkles className="h-5 w-5 text-cyan-400 transition-transform duration-300 group-hover:rotate-12" />
-              </div>
-            </div>
-            <div>
-              <h2 className="text-lg font-bold tracking-wider text-white">
-                SHIRE<span className="text-cyan-400">TECHNIK</span>
-              </h2>
-              <p className="text-[10px] font-medium tracking-widest text-slate-400 uppercase">
-                Engineering Solutions
-              </p>
-            </div>
-          </a>
-
-          {/* Desktop Navigation */}
-          <DesktopMenu />
-
-          {/* Header Action Button (Desktop) */}
-          <div className="hidden items-center gap-4 lg:flex">
-            <button className="group relative flex items-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition-all duration-300 hover:shadow-cyan-500/40 hover:scale-[1.02] active:scale-[0.98]">
-              <span>Get Started</span>
-              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-              <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-1000 group-hover:translate-x-full" />
-            </button>
+    <header className="fixed inset-x-0 top-0 z-50 px-4 py-3 sm:px-6">
+      <nav
+        className={`relative mx-auto flex max-w-[1400px] items-center justify-between rounded-2xl border px-5 transition-all duration-500 sm:px-6 ${
+          scrolled
+            ? "h-16 border-white/[0.08] bg-[#071019]/90 shadow-2xl shadow-black/30 backdrop-blur-2xl sm:h-[70px]"
+            : "h-16 border-white/[0.04] bg-[#05080d]/50 backdrop-blur-md sm:h-20"
+        }`}
+      >
+        {/* Brand */}
+        <Link to="/" className="group flex items-center gap-3">
+          {/* Logo icon (globe only) */}
+          <div className="flex items-center justify-center transition-transform duration-300 group-hover:scale-[1.03]">
+            <img
+              src={Logo}
+              alt="Shiretechnik"
+              className="h-10 w-auto object-contain sm:h-11 lg:h-12"
+            />
           </div>
 
-          {/* Mobile Menu Toggle */}
-          <MobileMenu />
-        </nav>
-      </Container>
+          {/* Brand text */}
+          <div className="hidden flex-col leading-none sm:flex">
+            <span
+              className="text-[19px] font-bold tracking-wide text-[#2AB5C0] sm:text-[21px]"
+              style={{
+                fontFamily: "'Kalam', cursive",
+                textShadow: "0 0 22px rgba(42,181,192,0.28)",
+                letterSpacing: "0.03em",
+              }}
+            >
+              SHIRETECHNIK
+            </span>
+            <span
+              className="mt-0.5 text-[10px] font-semibold tracking-wide text-[#F5A02B] sm:text-[11px]"
+              style={{
+                fontFamily: "'Kalam', cursive",
+                textShadow: "0 0 12px rgba(245,160,43,0.25)",
+              }}
+            >
+              SHape Your Idea To Reality
+            </span>
+          </div>
+        </Link>
+
+        {/* Desktop nav */}
+        <DesktopMenu />
+
+        {/* Desktop auth + CTA */}
+        <div className="hidden items-center gap-2.5 lg:flex">
+          {user ? (
+            <div className="flex items-center gap-2 rounded-xl border border-white/[0.07] bg-[#05080d] p-1.5 pl-3">
+              <div className="flex items-center gap-2">
+                <div className="flex h-7 w-7 items-center justify-center rounded-lg border border-cyan-400/20 bg-cyan-400/[0.06] text-cyan-400">
+                  <User size={14} />
+                </div>
+                <span className="max-w-[100px] truncate text-xs font-medium text-white">
+                  {user.name}
+                </span>
+              </div>
+              <button
+                onClick={logout}
+                title="Logout"
+                className="flex h-7 w-7 items-center justify-center rounded-lg border border-red-500/20 bg-red-500/[0.06] text-red-400 transition hover:bg-red-500/[0.12]"
+              >
+                <LogOut size={13} />
+              </button>
+            </div>
+          ) : (
+            <button
+              onClick={openLogin}
+              className="flex items-center gap-2 rounded-xl border border-white/[0.07] bg-[#05080d] px-4 py-2 text-sm font-medium text-slate-400 transition hover:border-cyan-400/20 hover:text-white"
+            >
+              <LogIn size={15} className="text-cyan-400" />
+              Login
+            </button>
+          )}
+
+          <Link
+            to="/contact"
+            className="group flex items-center gap-2 rounded-xl bg-cyan-400 px-5 py-2.5 text-sm font-medium text-[#05080d] transition hover:bg-cyan-300"
+          >
+            Get Quote
+            <ArrowRight
+              size={15}
+              className="transition-transform duration-300 group-hover:translate-x-0.5"
+            />
+          </Link>
+        </div>
+
+        {/* Mobile */}
+        <MobileMenu />
+      </nav>
     </header>
   );
 };

@@ -241,25 +241,7 @@ const Expertise = () => {
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-14 flex justify-center"
-        >
-          <a
-            href="/services"
-            className="group flex items-center gap-2.5 rounded-full border border-white/10 bg-white/[0.02] px-7 py-3 text-[11px] uppercase tracking-[0.2em] text-slate-400 transition-all duration-300 hover:border-cyan-400/30 hover:text-cyan-400"
-          >
-            View all services
-            <ArrowUpRight
-              size={13}
-              className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-            />
-          </a>
-        </motion.div>
+      
       </div>
     </section>
   );

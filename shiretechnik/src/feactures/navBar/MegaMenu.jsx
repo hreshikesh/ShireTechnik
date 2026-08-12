@@ -1,74 +1,72 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Cpu } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
-const MegaMenu = ({ menu }) => {
+const MegaMenu = ({ menu, onEnter, onLeave }) => {
   return (
     <AnimatePresence>
       {menu?.children && (
         <motion.div
-          initial={{ opacity: 0, y: 12, scale: 0.98 }}
+          initial={{ opacity: 0, y: 10, scale: 0.98 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: 8, scale: 0.98 }}
+          exit={{ opacity: 0, y: 6, scale: 0.98 }}
           transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          // ⚠️ FIX: Changed mt-3 to pt-4 to create an invisible hover bridge so the mouse doesn't leave the container
-          className="absolute left-1/2 top-full w-[560px] -translate-x-1/2 pt-4 z-50"
+          className="absolute left-1/2 top-full z-50 w-[340px] -translate-x-1/2 pt-3"
+          onMouseEnter={onEnter}
+          onMouseLeave={onLeave}
         >
-          <div className="relative overflow-hidden rounded-3xl border border-white/15 bg-[#070D18]/95 p-3 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.7)] backdrop-blur-3xl">
-            {/* Ambient Lighting Background Effect */}
-            <div className="pointer-events-none absolute -left-20 -top-20 h-40 w-40 rounded-full bg-cyan-500/15 blur-3xl" />
-            <div className="pointer-events-none absolute -bottom-20 -right-20 h-40 w-40 rounded-full bg-blue-600/15 blur-3xl" />
+          <div className="relative overflow-hidden rounded-2xl border border-white/[0.08] bg-[#071019]/95 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.7)] backdrop-blur-2xl">
+            {/* Ambient glow */}
+            <div className="pointer-events-none absolute -left-16 -top-16 h-32 w-32 rounded-full bg-cyan-500/[0.08] blur-[70px]" />
+            <div className="pointer-events-none absolute -bottom-16 -right-16 h-32 w-32 rounded-full bg-blue-500/[0.05] blur-[70px]" />
 
-            <div className="relative grid grid-cols-12 gap-3 p-2">
-              {/* Main Category Links */}
-              <div className="col-span-7 space-y-1">
-                <span className="mb-2 block px-3 text-[11px] font-semibold uppercase tracking-wider text-slate-400">
-                  {menu.label}
-                </span>
+            {/* Header label */}
+            <div className="relative border-b border-white/[0.05] px-4 py-3">
+              <span className="flex items-center gap-2 text-[10px] font-medium tracking-[0.2em] text-cyan-400/80">
+                <span className="h-px w-4 bg-cyan-400/60" />
+                {menu.label.toUpperCase()}
+              </span>
+            </div>
 
-                {menu.children.map((child) => (
-                  <Link
-                    key={child.label}
-                    to={child.path || "#"}
-                    className="group flex items-start gap-3 rounded-2xl p-3 transition-all duration-200 hover:bg-white/[0.06]"
-                  >
-                    <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 transition-colors group-hover:border-cyan-500/40 group-hover:bg-cyan-500/10">
-                      <Cpu className="h-4 w-4 text-slate-400 transition-colors group-hover:text-cyan-400" />
-                    </div>
-                    <div>
-                      <h4 className="flex items-center gap-1 text-sm font-semibold text-white transition-colors group-hover:text-cyan-300">
-                        {child.label}
-                        <ArrowUpRight className="h-3.5 w-3.5 opacity-0 transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100" />
-                      </h4>
-                      <p className="mt-0.5 text-xs leading-relaxed text-slate-400 line-clamp-1">
-                        Advanced architecture & tailored platform services.
-                      </p>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-
-              {/* Featured Highlight Section */}
-              <div className="col-span-5 flex flex-col justify-between rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.05] to-transparent p-4">
-                <div>
-                  <span className="rounded-full bg-cyan-500/20 px-2.5 py-1 text-[10px] font-bold text-cyan-400">
-                    FEATURED
-                  </span>
-                  <h5 className="mt-3 text-sm font-bold text-white">
-                    Next-Gen Tech Architecture
-                  </h5>
-                  <p className="mt-1 text-xs text-slate-400">
-                    Explore how our custom frameworks optimize scale.
-                  </p>
-                </div>
-
+            {/* Vertical list */}
+            <div className="relative flex flex-col p-2">
+              {menu.children.map((child, index) => (
                 <Link
-                  to="#"
-                  className="inline-flex items-center gap-1 text-xs font-semibold text-cyan-400 hover:underline"
+                  key={child.label}
+                  to={child.path || "#"}
+                  className="group relative flex items-start gap-3 overflow-hidden rounded-xl px-3 py-3 transition-colors duration-500"
                 >
-                  Read Whitepaper &rarr;
+                  {/* Liquid fill left-to-right */}
+                  <span className="absolute inset-y-0 left-0 w-0 bg-gradient-to-r from-cyan-400/[0.12] via-cyan-400/[0.05] to-transparent transition-all duration-500 ease-out group-hover:w-full" />
+
+                  {/* Left cyan indicator bar */}
+                  <span className="absolute left-0 top-1/2 h-0 w-[2px] -translate-y-1/2 rounded-r bg-cyan-400 transition-all duration-500 ease-out group-hover:h-[70%]" />
+
+                  {/* Index number */}
+                  <span className="relative z-10 mt-0.5 font-mono text-[10px] font-semibold tracking-wider text-slate-600 transition-colors duration-300 group-hover:text-cyan-400">
+                    0{index + 1}
+                  </span>
+
+                  {/* Content */}
+                  <div className="relative z-10 min-w-0 flex-1">
+                    <div className="flex items-center gap-1.5">
+                      <h4 className="text-sm font-semibold text-slate-200 transition-colors duration-300 group-hover:text-white">
+                        {child.label}
+                      </h4>
+                      <ArrowUpRight
+                        size={12}
+                        className="text-slate-600 opacity-0 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:opacity-100 group-hover:text-cyan-400"
+                      />
+                    </div>
+
+                    {child.description && (
+                      <p className="mt-1 text-[11px] leading-5 text-slate-500 transition-colors duration-300 group-hover:text-slate-400">
+                        {child.description}
+                      </p>
+                    )}
+                  </div>
                 </Link>
-              </div>
+              ))}
             </div>
           </div>
         </motion.div>

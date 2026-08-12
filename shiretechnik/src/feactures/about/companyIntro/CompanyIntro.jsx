@@ -182,23 +182,7 @@ const CompanyIntro = () => {
 
             </div>
 
-            {/* CTA */}
-            <motion.button
-              whileHover={{ x: 6 }}
-              whileTap={{ scale: 0.97 }}
-              className="group mt-12 flex items-center gap-4 text-sm text-white"
-            >
-              <span className="border-b border-cyan-400 pb-1">
-                Discover our expertise
-              </span>
-
-              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 transition-colors group-hover:border-cyan-400/50 group-hover:bg-cyan-400/10">
-                <ArrowUpRight
-                  size={17}
-                  className="text-cyan-400"
-                />
-              </span>
-            </motion.button>
+         
 
           </div>
 

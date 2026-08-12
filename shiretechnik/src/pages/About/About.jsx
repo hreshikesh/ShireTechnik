@@ -6,6 +6,7 @@ import Team from "../../feactures/about/team/Team";
 const About = () => {
   return (
     <>
+
       <AboutHero />
       <CompanyIntro />
       <Expertise />

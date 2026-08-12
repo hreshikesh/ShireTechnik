@@ -2,8 +2,9 @@ import PrimaryButton from "../../shared/PrimaryButton";
 import SecondaryButton from "../../shared/SecondaryButton";
 import { motion } from "framer-motion";
 import { fadeUp, staggerContainer } from "./animations/heroVariants";
-
+import { useNavigate } from "react-router-dom";
 const HeroContent = () => {
+  const navigate=useNavigate();
   return (
     <motion.div
       variants={staggerContainer}
@@ -31,8 +32,8 @@ const HeroContent = () => {
       </motion.p>
 
       <motion.div variants={fadeUp} className="mt-10 flex flex-wrap items-center gap-4">
-        <PrimaryButton>Explore Services</PrimaryButton>
-        <SecondaryButton>Book Appointment</SecondaryButton>
+        <PrimaryButton onClick={()=>navigate("/solutions/cae-services")}>Explore Services</PrimaryButton>
+        <SecondaryButton onClick={()=>navigate("/solutions/cae-software")}>Explore Solutions</SecondaryButton>
       </motion.div>
     </motion.div>
   );

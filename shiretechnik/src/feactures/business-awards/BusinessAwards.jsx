@@ -1,88 +1,229 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import SplitText from "../../component/SplitText";
+import { ArrowUpRight, Award} from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import CountUp from "../../component/CountUp";
 import { awardData } from "./awardData";
-import AwardBubble from "./AwardBubble";
-import CenterLogo from "./CenterLogo";
-import ConnectionLines from "./ConnectionLines";
-import BlueprintBackground from "./BlueprintBackground";
 
 const BusinessAwards = () => {
+  const navigate = useNavigate();
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"],
   });
 
-  // Parallax subtle shift for the entire nexus
-  const yShift = useTransform(scrollYProgress, [0, 1], [50, -50]);
+  const parallaxY = useTransform(scrollYProgress, [0, 1], [40, -40]);
 
   return (
-    <section 
+    <section
       ref={containerRef}
-      className="relative py-24 sm:py-32 overflow-hidden bg-[#05070d]"
+      className="relative overflow-hidden bg-[#05080d] py-20 md:py-28 lg:py-36"
     >
-      <BlueprintBackground />
+      {/* ── Background layers ── */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.025]"
+        style={{
+          backgroundImage: `linear-gradient(rgba(34,211,238,.6) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(34,211,238,.6) 1px, transparent 1px)`,
+          backgroundSize: "80px 80px",
+        }}
+      />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
-        {/* Header Section */}
-        <div className="text-center md:text-left mb-16 md:mb-24">
-          <p className="inline-flex items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-500/10 px-4 py-1 text-xs sm:text-sm font-semibold uppercase tracking-widest text-cyan-400 backdrop-blur-md">
-            <span className="h-2 w-2 rounded-full bg-cyan-400 animate-pulse" />
-            Global Impact
-          </p>
-          <SplitText
-            text="Achievements & Milestones"
-            className="mt-6 text-4xl sm:text-5xl font-bold tracking-tight text-white"
-          />
-          <p className="mt-6 max-w-2xl text-base sm:text-lg text-slate-400 mx-auto md:mx-0">
-            Pioneering engineering excellence worldwide through continuous innovation, 
-            relentless passion, and unshakeable partnerships.
-          </p>
-        </div>
+      <motion.div
+        animate={{
+          scale: [1, 1.15, 1],
+          opacity: [0.3, 0.5, 0.3],
+        }}
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+        className="pointer-events-none absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-400/[0.06] blur-[160px]"
+      />
 
-        {/* The Cyber-Nexus Grid */}
-        <motion.div 
-          style={{ y: yShift }}
-          className="relative mx-auto max-w-5xl"
+      <motion.div
+        animate={{ x: [-30, 30, -30], y: [-20, 20, -20] }}
+        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+        className="pointer-events-none absolute right-0 top-1/4 h-[300px] w-[300px] rounded-full bg-blue-500/[0.05] blur-[120px]"
+      />
+
+      <div className="relative mx-auto max-w-[1400px] px-5 sm:px-6 md:px-10">
+        {/* ── HEADER ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="mx-auto max-w-3xl text-center"
         >
-          {/* Desktop Connection Lines (Hidden on mobile) */}
-          <div className="hidden md:block absolute inset-0 pointer-events-none">
-            <ConnectionLines />
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/[0.06] px-4 py-1.5">
+            
+            <span className="text-[10px] font-medium tracking-[0.25em] text-cyan-400">
+              OUR MILESTONES
+            </span>
           </div>
 
-          {/* 3x3 Matrix Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-3 gap-6 md:gap-8 lg:gap-12 items-center place-items-center">
-            
-            {/* Top Left */}
-            <div className="md:col-start-1 md:row-start-1 w-full">
-              <AwardBubble item={awardData[0]} delay={0.2} index={0} />
-            </div>
+          <h2 className="text-4xl font-semibold leading-[1.05] tracking-[-0.045em] sm:text-5xl md:text-6xl lg:text-7xl text-cyan-300">
+            Impact measured in
+            <br />
+            <span className="bg-gradient-to-r from-cyan-300 via-cyan-400 to-blue-500 bg-clip-text text-transparent">
+              years, projects, trust.
+            </span>
+          </h2>
 
-            {/* Top Right */}
-            <div className="md:col-start-3 md:row-start-1 w-full">
-              <AwardBubble item={awardData[1]} delay={0.4} index={1} />
-            </div>
+          <p className="mx-auto mt-6 max-w-xl text-sm leading-7 text-slate-400 sm:text-base sm:leading-8">
+            A decade of engineering excellence. Numbers that reflect our
+            commitment to precision, innovation and long-lasting partnerships.
+          </p>
+        </motion.div>
 
-            {/* Center Core */}
-            <div className="md:col-start-2 md:row-start-2 relative z-20 my-10 md:my-0">
-              <CenterLogo />
-            </div>
-
-            {/* Bottom Left */}
-            <div className="md:col-start-1 md:row-start-3 w-full">
-              <AwardBubble item={awardData[2]} delay={0.6} index={2} />
-            </div>
-
-            {/* Bottom Right */}
-            <div className="md:col-start-3 md:row-start-3 w-full">
-              <AwardBubble item={awardData[3]} delay={0.8} index={3} />
-            </div>
-
+        {/* ── STATS GRID ── */}
+        <motion.div
+          style={{ y: parallaxY }}
+          className="mt-16 md:mt-20 lg:mt-24"
+        >
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {awardData.map((item, index) => (
+              <StatCard key={item.id} item={item} index={index} />
+            ))}
           </div>
         </motion.div>
+
+        {/* ── FEATURED ACHIEVEMENT BAR ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.4 }}
+          className="mt-6 overflow-hidden rounded-2xl border border-white/[0.07] bg-gradient-to-r from-[#071019] via-[#0a1420] to-[#071019] p-6 sm:rounded-3xl sm:p-8 md:mt-8"
+        >
+          <div className="flex flex-col items-start gap-6 lg:flex-row lg:items-center lg:justify-between">
+            <div className="flex items-start gap-4 lg:items-center">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-400/[0.06] text-cyan-400 sm:h-12 sm:w-12">
+                <Award size={20} strokeWidth={1.5} />
+              </div>
+              <div>
+                <p className="text-[10px] tracking-[0.25em] text-cyan-400">
+                  RECOGNITION
+                </p>
+                <h3 className="mt-1.5 text-lg font-semibold tracking-[-0.02em] sm:text-xl md:text-2xl text-cyan-500">
+                  Trusted engineering partner for global industry leaders.
+                </h3>
+                <p className="mt-2 max-w-xl text-xs leading-6 text-slate-500 sm:text-sm sm:leading-7">
+                  Selected by top-tier organizations for mission-critical
+                  simulation, analysis and design engineering projects.
+                </p>
+              </div>
+            </div>
+
+            <button
+              onClick={() => navigate("/about")}
+              className="group flex shrink-0 items-center gap-2 rounded-xl border border-white/10 bg-white/[0.02] px-5 py-3 text-sm font-medium text-slate-300 transition hover:border-cyan-400/30 hover:text-white"
+            >
+             About Us
+              <ArrowUpRight
+                size={14}
+                className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+              />
+            </button>
+          </div>
+        </motion.div>
+
+        {/* ── TRUST STRIP ── */}
+        {/* <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 border-t border-white/[0.06] pt-8 text-[11px] tracking-[0.15em] text-slate-600 md:mt-12 md:pt-10"
+        >
+          <span className="flex items-center gap-2">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+            ISO CERTIFIED
+          </span>
+          <span className="hidden h-3 w-px bg-white/10 sm:block" />
+          <span className="flex items-center gap-2">
+            <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
+            INDUSTRY RECOGNIZED
+          </span>
+          <span className="hidden h-3 w-px bg-white/10 sm:block" />
+          <span className="flex items-center gap-2">
+            <span className="h-1.5 w-1.5 rounded-full bg-blue-400" />
+            GLOBAL PARTNERSHIPS
+          </span>
+        </motion.div> */}
       </div>
     </section>
+  );
+};
+
+/* ═══════════════════════════════════════════
+   STAT CARD — premium bento-style
+   ═══════════════════════════════════════════ */
+const StatCard = ({ item, index }) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{
+        duration: 0.6,
+        delay: index * 0.1,
+        ease: [0.16, 1, 0.3, 1],
+      }}
+      whileHover={{ y: -4 }}
+      className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.07] bg-gradient-to-b from-[#0a1420] to-[#071019] p-6 transition-all duration-500 hover:border-cyan-400/20 sm:p-7 md:p-8"
+    >
+      {/* Hover glow */}
+      <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-cyan-400/[0.08] opacity-0 blur-[60px] transition-opacity duration-700 group-hover:opacity-100" />
+
+      {/* Corner accent */}
+      <div className="pointer-events-none absolute right-0 top-0 h-16 w-16">
+        <svg viewBox="0 0 64 64" className="h-full w-full">
+          <path
+            d="M 20 0 L 64 0 L 64 44"
+            fill="none"
+            stroke="rgba(34,211,238,0.2)"
+            strokeWidth="1"
+            className="transition-all duration-500 group-hover:stroke-cyan-400/60"
+          />
+        </svg>
+      </div>
+
+      {/* Metric tag */}
+      <div className="relative z-10 mb-6 flex items-center justify-between">
+        <span className="font-mono text-[9px] tracking-[0.2em] text-slate-600 transition-colors duration-500 group-hover:text-cyan-400/70">
+          {item.metric}
+        </span>
+        <span className="font-mono text-[10px] text-slate-700">
+          0{index + 1}
+        </span>
+      </div>
+
+      {/* Number */}
+      <div className="relative z-10 flex items-baseline gap-0.5">
+        <h3 className="bg-gradient-to-b from-white to-slate-400 bg-clip-text font-mono text-5xl font-bold leading-none tracking-tighter text-transparent sm:text-6xl md:text-6xl lg:text-7xl">
+          <CountUp to={item.value} duration={2.5} />
+        </h3>
+        <span className="text-3xl font-bold text-cyan-400 sm:text-4xl md:text-4xl lg:text-5xl">
+          {item.suffix}
+        </span>
+      </div>
+
+      {/* Animated line */}
+      <div className="relative z-10 mt-5">
+        <div className="h-px w-8 bg-gradient-to-r from-cyan-400 to-transparent transition-all duration-500 group-hover:w-full" />
+      </div>
+
+      {/* Title + description */}
+      <div className="relative z-10 mt-5 flex-1">
+        <h4 className="text-base font-semibold tracking-[-0.01em] text-white sm:text-lg">
+          {item.title}
+        </h4>
+        <p className="mt-2 text-xs leading-6 text-slate-500 transition-colors duration-500 group-hover:text-slate-400 sm:text-sm sm:leading-6">
+          {item.description}
+        </p>
+      </div>
+
+    </motion.div>
   );
 };
 
