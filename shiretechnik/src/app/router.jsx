@@ -10,7 +10,7 @@ import Resources from "../pages/Resources/Resources";
 import CAEServices from "../pages/solutions/CAEServices";
 import CAESES from "../pages/caeses/Caeses";
 import PyroSim from "../pages/pyrosim/Pyrosim";
-import Pathfinder from "../pages/pathfinder/pathfinder";
+import Pathfinder from "../pages/pathfinder/Pathfinder";
 import Ventus from "../pages/ventus/Ventus";
 import ThermalDesign from "../pages/Thermal/Thermal";
 import HVACDesign from "../pages/havc/havc";
