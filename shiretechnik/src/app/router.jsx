@@ -13,7 +13,7 @@ import PyroSim from "../pages/pyrosim/Pyrosim";
 import Pathfinder from "../pages/pathfinder/Pathfinder";
 import Ventus from "../pages/ventus/Ventus";
 import ThermalDesign from "../pages/Thermal/Thermal";
-import HVACDesign from "../pages/havc/havc";
+import HVACDesign from "../pages/havc/Havc";
 import MechanicalDesign from "../pages/mechanical/Mechanical";
 import StructuralAnalysis from "../pages/structure/Structure";
 import Careers from "../pages/carrer/Career";
