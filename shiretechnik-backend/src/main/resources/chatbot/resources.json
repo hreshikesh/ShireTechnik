@@ -1,0 +1,29 @@
+{
+  "domain": "resources",
+  "documents": [
+    {
+      "id": "resources-whitepapers",
+      "type": "resource",
+      "title": "Whitepapers",
+      "keywords": [
+        "whitepaper", "whitepapers", "white paper", "white papers",
+        "technical paper", "technical papers", "research paper",
+        "engineering paper", "cae whitepaper", "simulation whitepaper",
+        "technical document", "technical report", "engineering report",
+        "download whitepaper", "free whitepaper"
+      ],
+      "phrases": [
+        "whitepapers", "technical whitepapers", "engineering whitepapers",
+        "download whitepapers", "cae whitepapers", "simulation whitepapers",
+        "where are your whitepapers", "do you have whitepapers",
+        "can i read your whitepapers", "technical papers shiretechnik"
+      ],
+      "content": "Shiretechnik's whitepapers are available on the resources page. Visit the whitepapers page to access our full collection of technical papers and engineering resources.",
+      "boost": 1.2,
+      "button": { "label": "View Whitepapers", "url": "/resources/whitepapers" },
+      "links": [
+        { "label": "Go to Whitepapers", "url": "/resources/whitepapers" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,249 @@
+{
+  "domain": "solutions",
+  "documents": [
+    {
+      "id": "cae-services-overview",
+      "type": "solution",
+      "title": "CAE Service Solutions",
+      "keywords": [
+        "cae services", "cae service solutions", "engineering services",
+        "simulation services", "analysis services", "product development",
+        "cae expertise", "engineering support", "computer aided engineering services",
+        "cae consulting", "engineering analysis services", "product design services",
+        "cae solutions", "advanced cae", "engineering innovation"
+      ],
+      "phrases": [
+        "cae service solutions", "comprehensive cae services",
+        "engineering simulation services", "product development support",
+        "cae expertise for engineers", "advanced cae solutions",
+        "empowering innovation with cae", "reduce development time"
+      ],
+      "content": "Shiretechnik provides comprehensive CAE service solutions that help businesses innovate, reduce development time, and minimize risks. Our expertise in simulation and analysis tools allows us to support engineering teams at every stage of product design and development, ensuring reliable and high-performance outcomes. Our service focus areas include Thermal Design Services, HVAC Design Services, Mechanical Design Services, and Structural Design Services. Our CAE expertise covers Finite Element Analysis (FEA), Computational Fluid Dynamics (CFD), Multibody Dynamics (MBD), Fatigue and Durability Analysis, Optimization and Design Exploration, and Thermal and Electromagnetic Analysis.",
+      "boost": 1.3,
+      "button": { "label": "Explore CAE Services", "url": "/solutions/cae-services" },
+      "links": [
+        { "label": "Thermal Design Services", "url": "/solutions/cae-services/thermal-design" },
+        { "label": "HVAC Design Services", "url": "/solutions/cae-services/hvac-design" },
+        { "label": "Mechanical Design Services", "url": "/solutions/cae-services/mechanical-design" },
+        { "label": "Structural Design Services", "url": "/solutions/cae-services/structural-design" }
+      ]
+    },
+    {
+      "id": "cae-services-thermal-design",
+      "type": "solution",
+      "title": "Thermal Design Services",
+      "keywords": [
+        "thermal design", "thermal design services", "thermal simulation",
+        "thermal analysis", "heat transfer analysis", "thermal management services",
+        "thermal cae", "thermal engineering services", "thermal design cae",
+        "thermal design shiretechnik", "thermal design solutions",
+        "thermal simulation services", "heat management engineering",
+        "conjugate heat transfer", "thermal performance"
+      ],
+      "phrases": [
+        "thermal design services", "thermal simulation services",
+        "thermal analysis for engineering", "heat transfer simulation",
+        "thermal management solutions", "thermal design cae services",
+        "thermal engineering support"
+      ],
+      "content": "Shiretechnik's Thermal Design Services provide advanced thermal simulation and analysis to help engineers optimize heat transfer, thermal management, and thermal performance across products and systems. Our thermal design experts support projects from component level through to full system thermal analysis, ensuring designs meet thermal safety and performance requirements before physical prototypes are created. Services cover conjugate heat transfer modelling, thermal management for electronics, battery systems, and industrial equipment.",
+      "boost": 1.3,
+      "button": { "label": "Learn More", "url": "/solutions/cae-services/thermal-design" },
+      "links": [
+        { "label": "View All CAE Services", "url": "/solutions/cae-services" },
+        { "label": "HVAC Design Services", "url": "/solutions/cae-services/hvac-design" },
+        { "label": "Mechanical Design Services", "url": "/solutions/cae-services/mechanical-design" },
+        { "label": "Structural Design Services", "url": "/solutions/cae-services/structural-design" }
+      ]
+    },
+    {
+      "id": "cae-services-hvac-design",
+      "type": "solution",
+      "title": "HVAC Design Services",
+      "keywords": [
+        "hvac design", "hvac design services", "hvac simulation",
+        "hvac analysis", "ventilation design", "airflow simulation",
+        "hvac cae", "hvac engineering services", "hvac design cae",
+        "hvac design shiretechnik", "hvac design solutions",
+        "building services cae", "indoor air quality simulation",
+        "thermal comfort simulation", "hvac system design"
+      ],
+      "phrases": [
+        "hvac design services", "hvac simulation services",
+        "ventilation design services", "airflow analysis for buildings",
+        "hvac cae services", "hvac engineering support",
+        "indoor air quality analysis", "thermal comfort simulation"
+      ],
+      "content": "Shiretechnik's HVAC Design Services deliver advanced airflow and thermal simulation for building services projects covering ventilation, thermal comfort, indoor air quality, cleanrooms, and cooling systems. Our HVAC design experts translate mechanical designs into accurate simulation models, evaluate comfort against ASHRAE and ISO standards, and size and verify ventilation strategies for residential, commercial, and industrial buildings. Our services support architects, MEP consultants, and building owners throughout the design process.",
+      "boost": 1.3,
+      "button": { "label": "Learn More", "url": "/solutions/cae-services/hvac-design" },
+      "links": [
+        { "label": "View All CAE Services", "url": "/solutions/cae-services" },
+        { "label": "Thermal Design Services", "url": "/solutions/cae-services/thermal-design" },
+        { "label": "Mechanical Design Services", "url": "/solutions/cae-services/mechanical-design" },
+        { "label": "Structural Design Services", "url": "/solutions/cae-services/structural-design" }
+      ]
+    },
+    {
+      "id": "cae-services-mechanical-design",
+      "type": "solution",
+      "title": "Mechanical Design Services",
+      "keywords": [
+        "mechanical design", "mechanical design services", "mechanical simulation",
+        "mechanical analysis", "mechanical engineering services",
+        "mechanical cae", "mechanical design cae", "mechanical design shiretechnik",
+        "mechanical design solutions", "product design services",
+        "mechanical system analysis", "multibody dynamics", "mbd services",
+        "fatigue analysis", "durability analysis"
+      ],
+      "phrases": [
+        "mechanical design services", "mechanical simulation services",
+        "mechanical analysis for engineering", "mechanical cae services",
+        "mechanical engineering support", "product design simulation",
+        "multibody dynamics services", "fatigue and durability analysis"
+      ],
+      "content": "Shiretechnik's Mechanical Design Services provide comprehensive mechanical simulation and analysis to support product design and development. Our mechanical engineering experts deliver solutions across multibody dynamics, fatigue and durability analysis, optimization and design exploration, and general mechanical system analysis. We help engineering teams validate designs, optimize performance, and reduce development risk before physical prototypes are built, ensuring reliable and high-performance mechanical products.",
+      "boost": 1.3,
+      "button": { "label": "Learn More", "url": "/solutions/cae-services/mechanical-design" },
+      "links": [
+        { "label": "View All CAE Services", "url": "/solutions/cae-services" },
+        { "label": "Thermal Design Services", "url": "/solutions/cae-services/thermal-design" },
+        { "label": "HVAC Design Services", "url": "/solutions/cae-services/hvac-design" },
+        { "label": "Structural Design Services", "url": "/solutions/cae-services/structural-design" }
+      ]
+    },
+    {
+      "id": "cae-services-structural-design",
+      "type": "solution",
+      "title": "Structural Design Services",
+      "keywords": [
+        "structural design", "structural design services", "structural simulation",
+        "structural analysis", "fea services", "finite element analysis services",
+        "structural cae", "structural design cae", "structural design shiretechnik",
+        "structural design solutions", "stress analysis", "vibration analysis",
+        "structural integrity", "structural engineering services",
+        "strength analysis"
+      ],
+      "phrases": [
+        "structural design services", "structural simulation services",
+        "structural analysis for engineering", "fea structural services",
+        "structural engineering support", "stress and vibration analysis",
+        "finite element analysis services", "structural integrity analysis"
+      ],
+      "content": "Shiretechnik's Structural Design Services provide advanced structural simulation and analysis using Finite Element Analysis (FEA) to optimize product performance and ensure structural integrity. Our structural engineering experts deliver detailed stress, vibration, and structural analysis to ensure designs meet strength, safety, and durability standards before physical prototypes are created. Services cover static and dynamic structural analysis, fatigue and durability assessments, and structural optimization for industries including automotive, aerospace, energy, and manufacturing.",
+      "boost": 1.3,
+      "button": { "label": "Learn More", "url": "/solutions/cae-services/structural-design" },
+      "links": [
+        { "label": "View All CAE Services", "url": "/solutions/cae-services" },
+        { "label": "Thermal Design Services", "url": "/solutions/cae-services/thermal-design" },
+        { "label": "HVAC Design Services", "url": "/solutions/cae-services/hvac-design" },
+        { "label": "Mechanical Design Services", "url": "/solutions/cae-services/mechanical-design" }
+      ]
+    },
+    {
+      "id": "cae-services-expertise",
+      "type": "solution",
+      "title": "CAE Expertise",
+      "keywords": [
+        "cae expertise", "fea", "finite element analysis", "cfd",
+        "computational fluid dynamics", "multibody dynamics", "mbd",
+        "fatigue analysis", "durability analysis", "optimization",
+        "design exploration", "thermal analysis", "electromagnetic analysis",
+        "cae capabilities", "simulation expertise"
+      ],
+      "phrases": [
+        "cae expertise", "finite element analysis services",
+        "computational fluid dynamics services", "multibody dynamics analysis",
+        "fatigue and durability analysis", "optimization and design exploration",
+        "thermal and electromagnetic analysis"
+      ],
+      "content": "Shiretechnik's CAE expertise spans six core service areas. Finite Element Analysis (FEA): optimize product performance with detailed stress, vibration, and structural analysis using advanced FEA tools, ensuring designs meet strength, safety, and durability standards before physical prototypes are created. Computational Fluid Dynamics (CFD): advanced flow and thermal simulation across marine, HVAC, fire safety, and electronics domains. Multibody Dynamics (MBD): simulation of mechanical systems with multiple interacting components. Fatigue and Durability Analysis: assess the long-term performance and reliability of components under cyclic loading. Optimization and Design Exploration: systematic exploration of design variables to find optimal solutions. Thermal and Electromagnetic Analysis: detailed thermal and electromagnetic simulation for electronics and industrial systems.",
+      "boost": 1.2,
+      "button": { "label": "Explore CAE Services", "url": "/solutions/cae-services" },
+      "links": [
+        { "label": "Thermal Design Services", "url": "/solutions/cae-services/thermal-design" },
+        { "label": "HVAC Design Services", "url": "/solutions/cae-services/hvac-design" },
+        { "label": "Mechanical Design Services", "url": "/solutions/cae-services/mechanical-design" },
+        { "label": "Structural Design Services", "url": "/solutions/cae-services/structural-design" }
+      ]
+    },
+    {
+      "id": "cae-services-industries",
+      "type": "solution",
+      "title": "CAE Services Industries",
+      "keywords": [
+        "cae industries", "automotive cae", "aerospace cae",
+        "energy cae", "manufacturing cae", "consumer electronics cae",
+        "industry solutions", "specialized cae", "cae for automotive",
+        "cae for aerospace", "cae for energy", "cae for manufacturing",
+        "cae for electronics"
+      ],
+      "phrases": [
+        "specialized cae solutions", "cae for automotive industry",
+        "cae for aerospace industry", "cae for energy sector",
+        "cae for manufacturing", "cae for consumer electronics",
+        "industries we serve"
+      ],
+      "content": "Shiretechnik provides specialized CAE solutions across various industries. Automotive: enhancing vehicle performance, safety, and fuel efficiency through simulation. Aerospace: supporting structural integrity, aerodynamics, and thermal management for aircraft and space systems. Energy: optimizing systems for wind, solar, and thermal energy sectors. Manufacturing: accelerating the development of efficient, reliable, and durable machinery. Consumer Electronics: ensuring performance and reliability in electronics design through thermal and structural simulation.",
+      "boost": 1.1,
+      "button": { "label": "Contact Us", "url": "/solutions/cae-services" },
+      "links": [
+        { "label": "Thermal Design Services", "url": "/solutions/cae-services/thermal-design" },
+        { "label": "HVAC Design Services", "url": "/solutions/cae-services/hvac-design" },
+        { "label": "Mechanical Design Services", "url": "/solutions/cae-services/mechanical-design" },
+        { "label": "Structural Design Services", "url": "/solutions/cae-services/structural-design" }
+      ]
+    },
+    {
+      "id": "cae-services-why-choose-us",
+      "type": "solution",
+      "title": "Why Choose Shiretechnik CAE Services",
+      "keywords": [
+        "why choose shiretechnik", "experienced engineers", "advanced tools",
+        "customized solutions", "proven track record", "cae experts",
+        "trusted cae provider", "reliable cae services",
+        "cae engineering expertise", "industry experience"
+      ],
+      "phrases": [
+        "why choose shiretechnik", "engineering expertise you can rely on",
+        "experienced cae engineers", "advanced cae tools",
+        "customized engineering solutions", "proven cae track record"
+      ],
+      "content": "Shiretechnik's CAE services stand out for the following reasons. Experienced Engineers: our team consists of CAE experts with years of industry experience across multiple engineering domains. Advanced Tools: we utilize the latest CAE software and technologies to deliver precise and reliable simulation results. Customized Solutions: we tailor our services to meet your specific project requirements and goals. Proven Track Record: trusted by leading companies across multiple industries, we consistently deliver superior engineering results.",
+      "boost": 1.1,
+      "button": { "label": "Contact Us", "url": "/solutions/cae-services" },
+      "links": [
+        { "label": "Thermal Design Services", "url": "/solutions/cae-services/thermal-design" },
+        { "label": "HVAC Design Services", "url": "/solutions/cae-services/hvac-design" },
+        { "label": "Mechanical Design Services", "url": "/solutions/cae-services/mechanical-design" },
+        { "label": "Structural Design Services", "url": "/solutions/cae-services/structural-design" }
+      ]
+    },
+    {
+      "id": "cae-services-benefits",
+      "type": "solution",
+      "title": "Benefits of CAE Services",
+      "keywords": [
+        "cae benefits", "cost efficiency", "time efficiency",
+        "improved product performance", "risk mitigation",
+        "custom engineering solutions", "cae advantages",
+        "simulation benefits", "engineering outcomes"
+      ],
+      "phrases": [
+        "benefits of cae services", "why use cae services",
+        "cae service advantages", "better engineering outcomes",
+        "cost and time efficiency", "risk mitigation cae",
+        "improved product performance cae"
+      ],
+      "content": "The benefits of Shiretechnik's CAE service solutions include: Cost and Time Efficiency — optimize designs early in the development process to reduce costly physical iterations and shorten time to market. Improved Product Performance — deliver higher quality, more reliable products through accurate and detailed simulation. Risk Mitigation — identify and resolve design issues early before they become costly problems in production or field use. Custom Solutions — tailored CAE services designed to meet the specific needs of your project, industry, and engineering team.",
+      "boost": 1.1,
+      "button": { "label": "Get in Touch", "url": "/solutions/cae-services" },
+      "links": [
+        { "label": "Thermal Design Services", "url": "/solutions/cae-services/thermal-design" },
+        { "label": "HVAC Design Services", "url": "/solutions/cae-services/hvac-design" },
+        { "label": "Mechanical Design Services", "url": "/solutions/cae-services/mechanical-design" },
+        { "label": "Structural Design Services", "url": "/solutions/cae-services/structural-design" }
+      ]
+    }
+  ]
+}

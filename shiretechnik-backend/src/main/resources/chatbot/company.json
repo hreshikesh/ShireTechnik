@@ -1,43 +1,159 @@
 {
   "domain": "company",
-
-
   "documents": [
     {
       "id": "company-about",
       "type": "company",
-      "title": "About SandebTech",
-      "keywords": ["about", "company", "who are you", "sandebtech", "overview", "what is sandebtech", "introduce", "background"],
-      "phrases": ["about sandebtech", "who are you", "what is sandebtech", "tell me about the company"],
-      "content": "SandebTech is an engineering consulting company specializing in Computational Fluid Dynamics (CFD), marine engineering, digital engineering and simulation-driven product development. We deliver advanced engineering simulation, hydrodynamic optimization and digital engineering solutions for marine, offshore, defense and industrial sectors.",
+      "title": "About Shiretechnik",
+      "keywords": [
+        "about", "company", "who are you", "shiretechnik", "shiretechnik solutions",
+        "overview", "what is shiretechnik", "introduce", "background",
+        "engineering consultancy", "simulation consultancy", "our story",
+        "founded", "history", "established"
+      ],
+      "phrases": [
+        "about shiretechnik", "who are you", "what is shiretechnik",
+        "tell me about the company", "shiretechnik solutions private limited",
+        "when was shiretechnik founded", "our story"
+      ],
+      "content": "Shiretechnik Solutions Private Limited (Shiretechnik) was founded by a group of engineers in 2016. It is an Indian engineering and simulation consultancy firm specializing in advanced design and analysis services, with a strong focus on thermal and fluid systems. Our work combines engineering expertise with simulation-driven design to help organizations understand, validate, and optimize complex systems before physical implementation. We deliver CFD, thermal, CAE, and optimization solutions across marine, offshore, defense, industrial, building services, and electronics thermal management sectors.",
       "boost": 1.3,
       "button": { "label": "About Us", "url": "/about" }
+    },
+    {
+      "id": "company-tagline",
+      "type": "company",
+      "title": "Engineering Intelligence Behind Complex Systems",
+      "keywords": [
+        "tagline", "slogan", "what we do", "engineering intelligence",
+        "simulation consultancy", "advanced engineering", "cae driven design",
+        "thermal fluid design", "engineering focus"
+      ],
+      "phrases": [
+        "engineering intelligence", "what does shiretechnik do",
+        "shiretechnik tagline", "advanced engineering consultancy"
+      ],
+      "content": "Shiretechnik is an advanced engineering and simulation consultancy specializing in thermal, fluid, and CAE-driven design solutions. Our core focus areas include CFD (flow and pressure), Thermal (heat transfer), Fire Safety (PyroSim and Pathfinder), and HVAC (airflow design). We provide engineering intelligence behind complex systems through simulation-driven design and optimization.",
+      "boost": 1.2,
+      "button": { "label": "Learn More", "url": "/about" }
     },
     {
       "id": "company-location",
       "type": "company",
       "title": "Location and Headquarters",
-      "keywords": ["location", "office", "address", "bangalore", "bengaluru", "where are you", "headquarters", "based", "india", "situated"],
-      "phrases": ["where are you located", "office address", "your headquarters", "where is your office"],
-      "content": "SandebTech is headquartered in Bangalore, Karnataka, India.",
-      "boost": 1.2
+      "keywords": [
+        "location", "office", "address", "bangalore", "bengaluru",
+        "where are you", "headquarters", "based", "india", "situated",
+        "sanjaynagar", "keb layout", "karnataka"
+      ],
+      "phrases": [
+        "where are you located", "office address", "your headquarters",
+        "where is your office", "shiretechnik address", "shiretechnik location"
+      ],
+      "content": "Shiretechnik is headquartered at 166, 5th Main, K.E.B Layout, Sanjaynagar, Bangalore 560094, Karnataka, India.",
+      "boost": 1.2,
+      "button": { "label": "Contact Us", "url": "/contact" }
+    },
+    {
+      "id": "company-hours",
+      "type": "company",
+      "title": "Office Hours",
+      "keywords": [
+        "hours", "open hours", "working hours", "timing", "office timing",
+        "open", "closed", "business hours", "operating hours", "when open"
+      ],
+      "phrases": [
+        "what are your office hours", "when are you open",
+        "shiretechnik working hours", "business hours"
+      ],
+      "content": "Shiretechnik office hours are Monday to Saturday, 9:00 AM to 6:00 PM. Closed on Sundays.",
+      "boost": 1.1,
+      "button": { "label": "Contact Us", "url": "/contact" }
     },
     {
       "id": "company-industries",
       "type": "company",
       "title": "Industries Served",
-      "keywords": ["industry", "industries", "sector", "sectors", "market", "clients", "domain", "who do you serve", "verticals"],
-      "phrases": ["which industries", "what sectors", "industries served"],
-      "content": "SandebTech serves Marine and Maritime, Naval Architecture, Defense, Offshore, Heavy Engineering and Turbomachinery sectors, alongside building services and electronics thermal management applications.",
-      "boost": 1.0
+      "keywords": [
+        "industry", "industries", "sector", "sectors", "market", "clients",
+        "domain", "who do you serve", "verticals", "marine", "offshore",
+        "defense", "turbomachinery", "electronics", "building services"
+      ],
+      "phrases": [
+        "which industries", "what sectors", "industries served",
+        "who are your clients", "industries you work in"
+      ],
+      "content": "Shiretechnik serves Marine and Maritime, Naval Architecture, Defense, Offshore, Heavy Engineering, and Turbomachinery sectors, alongside building services (HVAC and fire safety) and electronics thermal management applications.",
+      "boost": 1.0,
+      "button": { "label": "Our Services", "url": "/solutions" }
+    },
+    {
+      "id": "company-services-offered",
+      "type": "company",
+      "title": "Services We Specialize In",
+      "keywords": [
+        "services", "what we offer", "specialization", "capabilities",
+        "cfd analysis", "pyrosim", "pathfinder", "ventus",
+        "thermal analysis", "hvac design", "mechanical design",
+        "structural design", "simulation services"
+      ],
+      "phrases": [
+        "what services do you offer", "what do you specialize in",
+        "shiretechnik services", "services we offer"
+      ],
+      "content": "Shiretechnik offers simulation-driven engineering services covering fluid dynamics, fire safety, thermal, and structural domains. Our core service offerings include CFD Analysis, PyroSim (fire simulation), Pathfinder (evacuation simulation), Ventus (engineering simulation), Thermal Analysis, HVAC Design, Mechanical Design, and Structural Design.",
+      "boost": 1.2,
+      "button": { "label": "Explore Services", "url": "/solutions" }
+    },
+    {
+      "id": "company-team",
+      "type": "company",
+      "title": "Our Team",
+      "keywords": [
+        "team", "founder", "director", "leadership", "people",
+        "engineers", "who works", "management", "board",
+        "debasis panda", "shankar", "archan", "sandeep nandi",
+        "pranjal mishra", "pradeep kunta", "sarang shidore"
+      ],
+      "phrases": [
+        "who is on the team", "shiretechnik team",
+        "who founded shiretechnik", "meet the team",
+        "who is the founder"
+      ],
+      "content": "The Shiretechnik team consists of engineers, analysts, and specialists working together to solve complex design and simulation challenges. Debasis Panda — Founder Director. Shankar S — Director. Archan Chaterjee — Director. Sandeep Nandi — Principal Consultant, IT and AI. Pranjal Mishra — CAE Engineer. Pradeep Kunta — Service Engineer. Sarang Shidore — Advisory Board Member. Our team of 7 members brings 20+ years of combined experience and has delivered 100+ projects.",
+      "boost": 1.2,
+      "button": { "label": "Meet the Team", "url": "/about" }
+    },
+    {
+      "id": "company-stats",
+      "type": "company",
+      "title": "Company Statistics",
+      "keywords": [
+        "stats", "statistics", "projects", "experience", "years",
+        "team size", "how many projects", "company size",
+        "track record"
+      ],
+      "phrases": [
+        "how many projects", "how many years of experience",
+        "company statistics", "shiretechnik achievements"
+      ],
+      "content": "Shiretechnik has been operating since 2016, with 20+ years of combined senior engineering experience, a team of 7 members, and 100+ projects delivered across marine, thermal, fire safety, HVAC, and CAE domains.",
+      "boost": 1.0,
+      "button": { "label": "About Us", "url": "/about" }
     },
     {
       "id": "faq-pricing",
       "type": "faq",
       "title": "Pricing and Quotations",
-      "keywords": ["cost", "pricing", "price", "quotation", "quote", "estimate", "budget", "rate", "fee", "charge", "how much"],
-      "phrases": ["how much does it cost", "request a quote", "pricing information", "what are your rates"],
-      "content": "Project pricing depends on the scope, complexity and engineering effort involved. Contact our team for a customized quotation based on your specific requirements.",
+      "keywords": [
+        "cost", "pricing", "price", "quotation", "quote", "estimate",
+        "budget", "rate", "fee", "charge", "how much"
+      ],
+      "phrases": [
+        "how much does it cost", "request a quote",
+        "pricing information", "what are your rates"
+      ],
+      "content": "Project pricing depends on the scope, complexity, and engineering effort involved. Contact the Shiretechnik team for a customized quotation based on your specific requirements.",
       "boost": 1.2,
       "button": { "label": "Request Quote", "url": "/contact" }
     },
@@ -45,177 +161,67 @@
       "id": "faq-software",
       "type": "faq",
       "title": "Software Support and Licensing",
-      "keywords": ["software", "license", "licence", "shipflow", "caeses", "training", "implementation", "support", "reseller", "purchase"],
-      "phrases": ["software licensing", "do you provide training", "software support"],
-      "content": "We provide engineering consulting, implementation, training and support for SHIPFLOW and CAESES software solutions.",
-      "boost": 1.1
+      "keywords": [
+        "software", "license", "licence", "caeses", "pyrosim",
+        "pathfinder", "ventus", "training", "implementation",
+        "support", "reseller", "purchase"
+      ],
+      "phrases": [
+        "software licensing", "do you provide training",
+        "software support", "how do i license software"
+      ],
+      "content": "Shiretechnik provides engineering consulting, implementation, training, and support for CAE software solutions including CAESES, PyroSim, Pathfinder, and Ventus.",
+      "boost": 1.1,
+      "button": { "label": "CAE Software", "url": "/solutions/cae-software" }
     },
     {
       "id": "faq-meeting",
       "type": "faq",
       "title": "Book a Meeting",
-      "keywords": ["meeting", "appointment", "consultation", "schedule", "book", "call", "demo", "discuss", "talk", "arrange"],
-      "phrases": ["book a meeting", "schedule a call", "arrange a consultation", "book a demo"],
-      "content": "You can schedule a technical consultation with our engineering specialists at a time that suits you.",
+      "keywords": [
+        "meeting", "appointment", "consultation", "schedule", "book",
+        "call", "demo", "discuss", "talk", "arrange"
+      ],
+      "phrases": [
+        "book a meeting", "schedule a call",
+        "arrange a consultation", "book a demo"
+      ],
+      "content": "You can schedule a technical consultation with Shiretechnik's engineering specialists at a time that suits you.",
       "boost": 1.2,
       "button": { "label": "Book Meeting", "url": "/meeting" }
     },
     {
       "id": "faq-contact",
       "type": "faq",
-      "title": "Contact SandebTech",
-      "keywords": ["contact", "phone", "email", "call", "reach", "get in touch", "enquiry", "inquiry", "speak", "connect"],
-      "phrases": ["how do i contact you", "get in touch", "contact details", "reach your team"],
-      "content": "You can reach SandebTech by email at contact@sandebtech.com, or use the contact page to send your enquiry directly to our engineering team.",
+      "title": "Contact Shiretechnik",
+      "keywords": [
+        "contact", "phone", "email", "call", "reach", "get in touch",
+        "enquiry", "inquiry", "speak", "connect", "telephone", "number"
+      ],
+      "phrases": [
+        "how do i contact you", "get in touch",
+        "contact details", "reach your team",
+        "phone number", "email address"
+      ],
+      "content": "You can reach Shiretechnik by phone at +91-80-23415100, or use the contact page to send your enquiry directly to our engineering team. Office hours are Monday to Saturday, 9:00 AM to 6:00 PM.",
       "boost": 1.2,
       "button": { "label": "Contact Us", "url": "/contact" }
+    },
+    {
+      "id": "faq-quick-links",
+      "type": "faq",
+      "title": "Quick Links",
+      "keywords": [
+        "quick links", "navigation", "menu", "pages", "sitemap",
+        "webinars", "white papers", "case studies", "careers"
+      ],
+      "phrases": [
+        "what pages do you have", "quick links",
+        "site navigation", "main pages"
+      ],
+      "content": "Shiretechnik quick links include: Home, About Us, Careers, CAE Software Solutions, CAE Service Solutions, Webinars, White Papers & Case Studies, and Contact.",
+      "boost": 1.0,
+      "button": { "label": "Home", "url": "/" }
     }
-,
-
-    {
-      "id": "hull-form-optimization",
-      "type": "service",
-      "title": "Hull Form Optimization",
-      "keywords": ["hull", "hull optimization", "ship optimization", "resistance", "drag", "ship resistance", "cfd"],
-      "phrases": ["hull optimization", "ship resistance analysis", "optimize hull", "hull CFD"],
-      "content": "Optimize vessel hull geometry using Computational Fluid Dynamics (CFD) to reduce resistance, improve propulsion efficiency and minimize fuel consumption. Capabilities include resistance prediction, hull shape optimization, wave pattern analysis and fuel consumption reduction.",
-      "boost": 1.2,
-      "button": {
-        "label": "View Service",
-        "url": "/services"
-      }
-    },
-    {
-      "id": "energy-saving-devices",
-      "type": "service",
-      "title": "Energy Saving Devices Optimization",
-      "keywords": ["energy saving", "energy saving device", "esd", "duct", "rudder bulb", "pre swirl", "fuel saving"],
-      "phrases": ["energy saving devices", "ESD optimization", "fuel saving devices"],
-      "content": "Design and optimize Energy Saving Devices (ESDs) using CFD to improve propulsion efficiency and reduce operational costs. Includes wake improvement, propeller interaction, pre-swirl duct optimization and fuel efficiency analysis.",
-      "boost": 1.2,
-      "button": {
-        "label": "View Service",
-        "url": "/services"
-      }
-    },
-    {
-      "id": "seakeeping-analysis",
-      "type": "service",
-      "title": "Seakeeping Analysis",
-      "keywords": ["seakeeping", "waves", "ship motion", "roll", "pitch", "heave", "sea state", "stability"],
-      "phrases": ["seakeeping analysis", "ship motion analysis"],
-      "content": "Evaluate vessel performance in real sea conditions through advanced seakeeping simulations. Services include motion prediction, wave response analysis, operability assessment and performance evaluation.",
-      "boost": 1.2,
-      "button": {
-        "label": "View Service",
-        "url": "/services"
-      }
-    },
-    {
-      "id": "cfd-engineering",
-      "type": "service",
-      "title": "CFD Engineering Consulting",
-      "keywords": ["consulting", "cfd", "engineering", "flow simulation", "fluid", "thermal", "simulation"],
-      "phrases": ["CFD consulting", "engineering consulting"],
-      "content": "Professional CFD consulting services for marine, offshore, industrial and turbomachinery engineering projects including flow simulation, thermal analysis, design validation and engineering consulting.",
-      "boost": 1.2,
-      "button": {
-        "label": "View Service",
-        "url": "/services"
-      }
-    },
-    {
-      "id": "hvac-simulation",
-      "type": "service",
-      "title": "HVAC and Ventilation Simulation",
-      "keywords": ["hvac", "ventilation", "airflow", "thermal comfort", "cooling", "building"],
-      "phrases": ["HVAC simulation", "ventilation analysis"],
-      "content": "Airflow, thermal comfort and ventilation simulation for buildings, cleanrooms and industrial facilities including indoor air quality and energy efficiency analysis.",
-      "boost": 1.2,
-      "button": {
-        "label": "View Service",
-        "url": "/services"
-      }
-    },
-    {
-      "id": "fire-safety-engineering",
-      "type": "service",
-      "title": "Fire Safety Engineering",
-      "keywords": ["fire", "smoke", "evacuation", "fire safety", "smoke control", "life safety"],
-      "phrases": ["fire safety engineering", "smoke simulation"],
-      "content": "Performance-based fire and smoke modelling with evacuation analysis including smoke control design, fire dynamics, evacuation analysis and tenability assessment.",
-      "boost": 1.2,
-      "button": {
-        "label": "View Service",
-        "url": "/services"
-      }
-    },
-    {
-      "id": "electronics-thermal",
-      "type": "service",
-      "title": "Electronics Thermal Management",
-      "keywords": ["electronics cooling", "thermal", "heat sink", "pcb", "data center", "battery"],
-      "phrases": ["electronics cooling", "thermal management"],
-      "content": "Conjugate heat transfer analysis and thermal optimization for electronics, enclosures, data centers and battery systems including heat sink optimization, PCB thermal analysis, liquid cooling and data center cooling.",
-      "boost": 1.2,
-      "button": {
-        "label": "View Service",
-        "url": "/services"
-      }
-    },
-    {
-      "id": "shipflow",
-      "type": "solution",
-      "title": "SHIPFLOW CFD",
-      "keywords": ["shipflow", "shipflow cfd", "ship resistance", "ship", "propeller", "hull"],
-      "phrases": ["SHIPFLOW", "SHIPFLOW CFD"],
-      "content": "SHIPFLOW is a specialized CFD solution for ship resistance prediction, propulsion analysis, self-propulsion simulations and hull optimization.",
-      "boost": 1.2,
-      "button": {
-        "label": "Explore SHIPFLOW",
-        "url": "/solutions/shipflow-cfd"
-      }
-    },
-    {
-      "id": "caeses",
-      "type": "solution",
-      "title": "CAESES",
-      "keywords": ["caeses", "parametric", "cad", "geometry", "optimization"],
-      "phrases": ["CAESES software", "CAESES"],
-      "content": "CAESES is a parametric CAD and design optimization platform enabling automated engineering workflows and CFD-driven optimization.",
-      "boost": 1.2,
-      "button": {
-        "label": "Explore CAESES",
-        "url": "/solutions/caeses"
-      }
-    },
-    {
-      "id": "lotus-micro",
-      "type": "solution",
-      "title": "Lotus Marine",
-      "keywords": ["lotus", "lotus micro", "marine", "offshore", "seakeeping"],
-      "phrases": ["Lotus Micro"],
-      "content": "Lotus Marine delivers advanced marine engineering solutions for offshore structures, vessel dynamics and seakeeping analysis.",
-      "boost": 1.2,
-      "button": {
-        "label": "Explore Lotus Micro",
-        "url": "/solutions/lotus-micro"
-      }
-    },
-    {
-      "id": "turbomachinery",
-      "type": "solution",
-      "title": "Turbomachinery",
-      "keywords": ["turbomachinery", "compressor", "pump", "fan", "turbine", "impeller"],
-      "phrases": ["turbomachinery simulation"],
-      "content": "Advanced turbomachinery simulation and optimization for pumps, compressors, turbines and rotating equipment.",
-      "boost": 1.2,
-      "button": {
-        "label": "Explore Turbomachinery",
-        "url": "/solutions/turbomachinery"
-      }
-    }
-]
-
-
+  ]
 }
