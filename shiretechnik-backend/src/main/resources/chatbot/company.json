@@ -85,7 +85,7 @@
       ],
       "content": "Shiretechnik serves Marine and Maritime, Naval Architecture, Defense, Offshore, Heavy Engineering, and Turbomachinery sectors, alongside building services (HVAC and fire safety) and electronics thermal management applications.",
       "boost": 1.0,
-      "button": { "label": "Our Services", "url": "/solutions" }
+      "button": { "label": "Our Services", "url": "/about#service" }
     },
     {
       "id": "company-services-offered",
@@ -103,7 +103,7 @@
       ],
       "content": "Shiretechnik offers simulation-driven engineering services covering fluid dynamics, fire safety, thermal, and structural domains. Our core service offerings include CFD Analysis, PyroSim (fire simulation), Pathfinder (evacuation simulation), Ventus (engineering simulation), Thermal Analysis, HVAC Design, Mechanical Design, and Structural Design.",
       "boost": 1.2,
-      "button": { "label": "Explore Services", "url": "/solutions" }
+      "button": { "label": "Explore Services", "url": "/about#service" }
     },
     {
       "id": "company-team",
