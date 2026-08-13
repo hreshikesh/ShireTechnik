@@ -76,6 +76,7 @@ const ServiceCard = ({ item, index }) => {
   const Icon = item.icon;
 
   return (
+
     <motion.a
       href={item.link}
       initial={{ opacity: 0, y: 40 }}
@@ -88,24 +89,21 @@ const ServiceCard = ({ item, index }) => {
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={`group relative flex flex-col items-center justify-center overflow-hidden rounded-2xl border p-8 text-center transition-all duration-500 aspect-square ${
-        isHovered
+      className={`group relative flex flex-col items-center justify-center overflow-hidden rounded-2xl border p-8 text-center transition-all duration-500 aspect-square ${isHovered
           ? "border-cyan-400/20 bg-[#0a1628]"
           : "border-white/[0.06] bg-[#0a0f1a] hover:border-white/10"
-      }`}
+        }`}
     >
       {/* Top line accent */}
       <div
-        className={`absolute left-0 top-0 h-[2px] bg-gradient-to-r from-cyan-400 to-cyan-400/0 transition-all duration-500 ${
-          isHovered ? "w-full" : "w-0"
-        }`}
+        className={`absolute left-0 top-0 h-[2px] bg-gradient-to-r from-cyan-400 to-cyan-400/0 transition-all duration-500 ${isHovered ? "w-full" : "w-0"
+          }`}
       />
 
       {/* Number */}
       <span
-        className={`absolute left-4 top-4 font-mono text-[10px] tracking-[0.2em] transition-colors duration-300 ${
-          isHovered ? "text-cyan-400" : "text-slate-700"
-        }`}
+        className={`absolute left-4 top-4 font-mono text-[10px] tracking-[0.2em] transition-colors duration-300 ${isHovered ? "text-cyan-400" : "text-slate-700"
+          }`}
       >
         {item.number}
       </span>
@@ -113,20 +111,18 @@ const ServiceCard = ({ item, index }) => {
       {/* Arrow */}
       <ArrowUpRight
         size={14}
-        className={`absolute right-4 top-4 transition-all duration-300 ${
-          isHovered
+        className={`absolute right-4 top-4 transition-all duration-300 ${isHovered
             ? "translate-x-0 -translate-y-0 text-cyan-400 opacity-100"
             : "-translate-x-1 translate-y-1 text-slate-700 opacity-0"
-        }`}
+          }`}
       />
 
       {/* Default state: Icon + Title */}
       <div
-        className={`flex flex-col items-center gap-4 transition-all duration-500 ${
-          isHovered
+        className={`flex flex-col items-center gap-4 transition-all duration-500 ${isHovered
             ? "scale-90 opacity-0 blur-sm"
             : "scale-100 opacity-100 blur-0"
-        }`}
+          }`}
       >
         <div className="flex h-14 w-14 items-center justify-center rounded-xl border border-white/10 bg-white/[0.02] text-slate-500">
           <Icon size={24} strokeWidth={1.5} />
@@ -139,11 +135,10 @@ const ServiceCard = ({ item, index }) => {
 
       {/* Hover state: Logo + "We offer this" */}
       <div
-        className={`absolute inset-0 flex flex-col items-center justify-center gap-4 px-6 transition-all duration-500 ${
-          isHovered
+        className={`absolute inset-0 flex flex-col items-center justify-center gap-4 px-6 transition-all duration-500 ${isHovered
             ? "scale-100 opacity-100 blur-0"
             : "scale-110 opacity-0 blur-sm"
-        }`}
+          }`}
       >
         <img
           src={logo}
@@ -169,21 +164,18 @@ const ServiceCard = ({ item, index }) => {
 
       {/* Corner accents on hover */}
       <span
-        className={`absolute left-3 bottom-3 border-l border-b border-cyan-400/40 transition-all duration-500 ${
-          isHovered ? "h-5 w-5 opacity-100" : "h-0 w-0 opacity-0"
-        }`}
+        className={`absolute left-3 bottom-3 border-l border-b border-cyan-400/40 transition-all duration-500 ${isHovered ? "h-5 w-5 opacity-100" : "h-0 w-0 opacity-0"
+          }`}
       />
       <span
-        className={`absolute right-3 bottom-3 border-r border-b border-cyan-400/40 transition-all duration-500 delay-75 ${
-          isHovered ? "h-5 w-5 opacity-100" : "h-0 w-0 opacity-0"
-        }`}
+        className={`absolute right-3 bottom-3 border-r border-b border-cyan-400/40 transition-all duration-500 delay-75 ${isHovered ? "h-5 w-5 opacity-100" : "h-0 w-0 opacity-0"
+          }`}
       />
 
       {/* Background glow */}
       <div
-        className={`pointer-events-none absolute -bottom-10 left-1/2 h-32 w-32 -translate-x-1/2 rounded-full bg-cyan-400 blur-[60px] transition-opacity duration-700 ${
-          isHovered ? "opacity-[0.08]" : "opacity-0"
-        }`}
+        className={`pointer-events-none absolute -bottom-10 left-1/2 h-32 w-32 -translate-x-1/2 rounded-full bg-cyan-400 blur-[60px] transition-opacity duration-700 ${isHovered ? "opacity-[0.08]" : "opacity-0"
+          }`}
       />
     </motion.a>
   );
@@ -191,7 +183,10 @@ const ServiceCard = ({ item, index }) => {
 
 const Expertise = () => {
   return (
-    <section className="relative overflow-hidden bg-[#05080d] py-32 text-white md:py-44">
+    <section
+      id="services"
+      className="relative overflow-hidden bg-[#05080d] py-32 text-white md:py-44 scroll-mt-24"
+    >
       {/* Background grid */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.025]"
@@ -241,7 +236,7 @@ const Expertise = () => {
           ))}
         </div>
 
-      
+
       </div>
     </section>
   );
