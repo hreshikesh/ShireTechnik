@@ -171,7 +171,7 @@ const CompanyIntro = () => {
               />
 
               <Stat
-                number="20+"
+                number="10+"
                 label="Years Senior Experience"
               />
 

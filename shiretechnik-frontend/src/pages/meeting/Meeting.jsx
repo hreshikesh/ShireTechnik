@@ -6,7 +6,8 @@ import { CalendarCheck, ChevronRight, Clock, Users, Shield } from "lucide-react"
 import DateSelector from "../../feactures/meeting/DateSelector";
 import TimeSlots from "../../feactures/meeting/TimeSlots";
 import BookingForm from "../../feactures/meeting/BookingForm";
-
+import SEO from "../../seo/SEO";
+import { seoPages } from "../../seo/seoConfig";
 function getInitialDate() {
   const date = new Date();
   date.setDate(date.getDate() + 1);
@@ -30,7 +31,7 @@ function Meeting() {
 
   return (
     <main className="relative overflow-hidden bg-[#05080d] text-white">
-      {/* ── Background layers ── */}
+     <SEO {...seoPages.Meeting} />
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.025]"
         style={{

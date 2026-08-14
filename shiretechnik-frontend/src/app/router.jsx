@@ -6,7 +6,6 @@ import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/Home/Home";
 import About from "../pages/About/About";
 import CAESoftware from "../pages/solutions/CAESoftware";
-import Resources from "../pages/Resources/Resources";
 import CAEServices from "../pages/solutions/CAEServices";
 import CAESES from "../pages/caeses/Caeses";
 import PyroSim from "../pages/pyrosim/Pyrosim";
@@ -26,6 +25,7 @@ import Meeting from "../pages/meeting/Meeting";
 import { Toaster } from "sonner";
 import SessionTimeout from "../feactures/auth/SessionTimeout";
 import AuthManager from "../feactures/auth/AuthManager";
+import HvacProducts from "../pages/hvac-product/HvacProducts";
 
 // Admin Imports
 import AdminRoute from "./AdminRoutes";
@@ -36,14 +36,22 @@ import Meetings from "../admin/pages/Meetings";
 import Contacts from "../admin/pages/Contacts";
 import Downloads from "../admin/pages/Download";
 
+// Loader
+import PageLoader from "../feactures/loader/PageLoader";
+import { useRouteLoader } from "../hooks/useRouteLoader";
+
 const AppRouter = () => {
   const location = useLocation();
+  const isLoading = useRouteLoader(400, 800); // 400ms transitions, 800ms initial
 
   return (
     <>
       <Toaster position="bottom-right" />
       <SessionTimeout />
       <AuthManager />
+
+      {/* Page loader — sits above everything */}
+      <PageLoader show={isLoading} />
 
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
@@ -52,6 +60,7 @@ const AppRouter = () => {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/careers" element={<Careers />} />
+            <Route path="/hvac-products" element={<HvacProducts />} />
 
             {/* CAE Software */}
             <Route path="/solutions/cae-software" element={<CAESoftware />} />
@@ -68,7 +77,6 @@ const AppRouter = () => {
             <Route path="/solutions/cae-services/structural-design" element={<StructuralAnalysis />} />
 
             {/* Resources */}
-            <Route path="/resources" element={<Resources />} />
             <Route path="/resources/webinar" element={<WebinarsPage />} />
             <Route path="/resources/whitepapers" element={<CaseStudies />} />
 

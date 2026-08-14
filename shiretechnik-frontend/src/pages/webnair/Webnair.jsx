@@ -17,7 +17,8 @@ import {
   ChevronRight,
   X,
 } from "lucide-react";
-
+import SEO from "../../seo/SEO";
+import { seoPages } from "../../seo/seoConfig";
 const rawWebinarsData = [
   {
     id: "webinar-2",
@@ -135,8 +136,7 @@ const WebinarsPage = () => {
 
   return (
     <main className="overflow-hidden bg-[#05080d] text-white">
-
-      {/* ── HERO ── */}
+      <SEO {...seoPages.WebinarsPage} />
       <section className="relative py-14 md:py-24 lg:py-28">
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.025]"
@@ -318,11 +318,10 @@ const WebinarsPage = () => {
                   <button
                     key={status}
                     onClick={() => setStatusFilter(status)}
-                    className={`px-3.5 py-2 text-[10px] font-medium tracking-[0.08em] transition-all duration-300 sm:text-[11px] ${
-                      statusFilter === status
+                    className={`px-3.5 py-2 text-[10px] font-medium tracking-[0.08em] transition-all duration-300 sm:text-[11px] ${statusFilter === status
                         ? "bg-cyan-400/[0.1] text-cyan-400"
                         : "text-slate-500 hover:bg-white/[0.03] hover:text-slate-300"
-                    }`}
+                      }`}
                   >
                     {status === "all" ? "All" : status}
                   </button>
@@ -348,11 +347,10 @@ const WebinarsPage = () => {
                 <button
                   key={cat.id}
                   onClick={() => setSelectedCategory(cat.id)}
-                  className={`flex items-center gap-2 rounded-xl border px-4 py-2.5 text-[11px] font-medium tracking-[0.06em] transition-all duration-300 sm:text-xs ${
-                    selectedCategory === cat.id
+                  className={`flex items-center gap-2 rounded-xl border px-4 py-2.5 text-[11px] font-medium tracking-[0.06em] transition-all duration-300 sm:text-xs ${selectedCategory === cat.id
                       ? "border-cyan-400/30 bg-cyan-400/[0.08] text-cyan-400"
                       : "border-white/[0.07] text-slate-500 hover:border-white/[0.12] hover:text-slate-300"
-                  }`}
+                    }`}
                 >
                   {Icon && <Icon size={14} />}
                   {cat.name}
@@ -401,11 +399,10 @@ const WebinarsPage = () => {
                         </span>
                       </div>
                       <span
-                        className={`flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[9px] font-medium tracking-[0.08em] ${
-                          isUpcoming
+                        className={`flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[9px] font-medium tracking-[0.08em] ${isUpcoming
                             ? "border-emerald-500/20 bg-emerald-500/[0.06] text-emerald-400"
                             : "border-white/10 bg-white/[0.03] text-slate-500"
-                        }`}
+                          }`}
                       >
                         {isUpcoming ? <Video size={10} /> : <PlayCircle size={10} />}
                         {item.status}
@@ -452,11 +449,10 @@ const WebinarsPage = () => {
                         href={item.registrationUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`flex w-full items-center justify-center gap-2 rounded-xl py-2.5 text-sm font-medium transition-all duration-300 ${
-                          isUpcoming
+                        className={`flex w-full items-center justify-center gap-2 rounded-xl py-2.5 text-sm font-medium transition-all duration-300 ${isUpcoming
                             ? "bg-cyan-400 text-[#05080d] hover:bg-cyan-300"
                             : "border border-white/10 text-slate-400 hover:border-cyan-400/20 hover:text-cyan-400"
-                        }`}
+                          }`}
                       >
                         {isUpcoming ? "Register for Live Session" : "Watch Recorded Session"}
                         {isUpcoming ? <ArrowUpRight size={14} /> : <PlayCircle size={14} />}

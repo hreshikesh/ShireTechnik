@@ -19,8 +19,8 @@ import {
 import pyrosimLogo  from "../../assets/images/pyrosim/pyrosim.webp";
 import pyrosimHero  from "../../assets/images/pyrosim/pyroHero.webp";
 import fdsLogo      from "../../assets/images/pyrosim/fds.webp";
-
-
+import SEO from "../../seo/SEO";
+import { seoPages } from "../../seo/seoConfig";
 const tabs = [
   { id: "overview",  label: "Overview"      },
   { id: "features",  label: "Features"      },
@@ -124,6 +124,7 @@ const Carousel = ({ items, renderCard, desktopCols = 3 }) => {
 
   return (
     <div ref={ref} className="relative w-full">
+       <SEO {...seoPages.PyroSim} />
       {showNav && (
         <div className="mb-5 flex justify-end gap-2">
           <button onClick={prev} disabled={current === 0} aria-label="Previous"

@@ -12,7 +12,9 @@ import {
 import thermalImg1 from "../../assets/images/thermaldesign/thermal.webp";
 import thermalImg2 from "../../assets/images/thermaldesign/thermalIndustry.webp";
 import thermalImg3 from "../../assets/images/thermaldesign/thermlaeng.webp";
-
+import ThermalApplicationsSection from "../../feactures/thermal/ThermalApplicationsSection";
+import SEO from "../../seo/SEO";
+import { seoPages } from "../../seo/seoConfig";
 const benefits = [
   "Improved Product Performance",
   "Optimum Cooling Design Solution",
@@ -67,7 +69,7 @@ const ThermalDesign = () => {
 
   return (
     <main className="overflow-hidden bg-[#05080d] text-white">
-
+      <SEO {...seoPages.ThermalDesign} />
       <section className="relative py-14 md:py-24 lg:py-32">
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.025]"
@@ -413,6 +415,7 @@ const ThermalDesign = () => {
           </div>
         </div>
       </section>
+      <ThermalApplicationsSection />
 
       <section className="border-t border-white/[0.06] bg-[#071019] py-16 md:py-24 lg:py-28">
         <div className="mx-auto max-w-[900px] px-5 sm:px-6 md:px-10">
@@ -452,7 +455,7 @@ const ThermalDesign = () => {
           </motion.div>
         </div>
       </section>
-
+      {/* i need  a section named thermal application with twhich is modular where we later keep on adding application it data should have id,small desc,pdf link-pdf modal  */}
     </main>
   );
 };

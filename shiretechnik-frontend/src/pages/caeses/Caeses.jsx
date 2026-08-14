@@ -30,20 +30,18 @@ import hull from "../../assets/images/caeses/hull.webp";
 import turbo from "../../assets/images/caeses/turbo.webp";
 import duct from "../../assets/images/caeses/duct.webp";
 import aero from "../../assets/images/caeses/aero.webp";
-import propeller from  "../../assets/images/caeses/propeller.webp";
-import valves from  "../../assets/images/caeses/valves.webp";
+import propeller from "../../assets/images/caeses/propeller.webp";
+import valves from "../../assets/images/caeses/valves.webp";
 
-/* ------------------------------------------------------------------ */
-/*  Data                                                               */
-/* ------------------------------------------------------------------ */
-
+import SEO from "../../seo/SEO";
+import { seoPages } from "../../seo/seoConfig";
 const tabs = [
-  { id: "overview",      label: "Overview"      },
-  { id: "features",      label: "Key Features"  },
-  { id: "applications",  label: "Applications"  },
-  { id: "industries",    label: "Industries"    },
-  { id: "workflow",      label: "Workflow"      },
-  { id: "benefits",      label: "Benefits"      },
+  { id: "overview", label: "Overview" },
+  { id: "features", label: "Key Features" },
+  { id: "applications", label: "Applications" },
+  { id: "industries", label: "Industries" },
+  { id: "workflow", label: "Workflow" },
+  { id: "benefits", label: "Benefits" },
 ];
 
 const keyFeatures = [
@@ -91,7 +89,7 @@ const applications = [
     title: "Hull Form Optimization",
     description:
       "Optimize ship hull forms to reduce resistance, improve fuel efficiency, and enhance seakeeping performance. CAESES is widely used in the maritime industry for hull design and optimization.",
-    image:hull,
+    image: hull,
   },
   {
     icon: Wind,
@@ -240,20 +238,20 @@ const Carousel = ({ items, renderCard, desktopCols = 3 }) => {
   useEffect(() => {
     const calc = () => {
       const w = ref.current?.offsetWidth || window.innerWidth;
-      if (w < 640)       setColsPerView(1);
+      if (w < 640) setColsPerView(1);
       else if (w < 1024) setColsPerView(2);
-      else               setColsPerView(desktopCols);
+      else setColsPerView(desktopCols);
     };
     calc();
     window.addEventListener("resize", calc);
     return () => window.removeEventListener("resize", calc);
   }, [desktopCols]);
 
-  const maxIndex   = Math.max(0, items.length - colsPerView);
-  const showNav    = colsPerView < items.length;
-  const next       = () => setCurrent((p) => Math.min(p + 1, maxIndex));
-  const prev       = () => setCurrent((p) => Math.max(p - 1, 0));
-  const cardWidth  = 100 / colsPerView;
+  const maxIndex = Math.max(0, items.length - colsPerView);
+  const showNav = colsPerView < items.length;
+  const next = () => setCurrent((p) => Math.min(p + 1, maxIndex));
+  const prev = () => setCurrent((p) => Math.max(p - 1, 0));
+  const cardWidth = 100 / colsPerView;
 
   return (
     <div ref={ref} className="relative w-full">
@@ -306,9 +304,8 @@ const Carousel = ({ items, renderCard, desktopCols = 3 }) => {
               key={i}
               onClick={() => setCurrent(i)}
               aria-label={`Slide ${i + 1}`}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
-                current === i ? "w-6 bg-cyan-400" : "w-1.5 bg-white/20"
-              }`}
+              className={`h-1.5 rounded-full transition-all duration-300 ${current === i ? "w-6 bg-cyan-400" : "w-1.5 bg-white/20"
+                }`}
             />
           ))}
         </div>
@@ -321,8 +318,8 @@ const Carousel = ({ items, renderCard, desktopCols = 3 }) => {
 /*  Page                                                               */
 /* ------------------------------------------------------------------ */
 const CAESES = () => {
-  const navigate   = useNavigate();
-  const [activeTab, setActiveTab]           = useState("overview");
+  const navigate = useNavigate();
+  const [activeTab, setActiveTab] = useState("overview");
   const [activeIndustry, setActiveIndustry] = useState(0);
   const sectionRefs = useRef({});
 
@@ -354,7 +351,7 @@ const CAESES = () => {
 
   return (
     <main className="overflow-hidden bg-[#05080d] text-white">
-
+      <SEO {...seoPages.CAESES} />
       {/* =====================================================
           HERO
       ===================================================== */}
@@ -425,7 +422,7 @@ const CAESES = () => {
               </h1>
 
               <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-400 sm:text-base sm:leading-8 md:mt-7">
-                CAESES is a dedicated software platform for geometry modeling
+                Caeses is a authorized patner of  Shiretechnik and co-patner of Sandebtech.CAESES is a dedicated software platform for geometry modeling
                 and simulation-driven design optimization. It enables engineers
                 to create parametric 3D models, set up automated simulation
                 workflows, and perform shape optimization to develop
@@ -462,9 +459,9 @@ const CAESES = () => {
               {/* quick stats */}
               <div className="mt-8 flex flex-wrap gap-8 border-t border-white/[0.08] pt-8 md:mt-10 md:gap-12 md:pt-10">
                 {[
-                  { value: "10x",   label: "Faster Design Exploration" },
-                  { value: "1000+", label: "Design Variants Per Run"   },
-                  { value: "30%+",  label: "Performance Improvement"   },
+                  { value: "10x", label: "Faster Design Exploration" },
+                  { value: "1000+", label: "Design Variants Per Run" },
+                  { value: "30%+", label: "Performance Improvement" },
                 ].map((s, i) => (
                   <div key={i}>
                     <span className="block font-mono text-2xl font-bold text-cyan-400 md:text-3xl">
@@ -532,11 +529,10 @@ const CAESES = () => {
               <button
                 key={tab.id}
                 onClick={() => scrollTo(tab.id)}
-                className={`relative shrink-0 px-4 py-4 text-[11px] font-medium tracking-[0.08em] transition-colors duration-300 sm:px-5 sm:text-xs ${
-                  activeTab === tab.id
+                className={`relative shrink-0 px-4 py-4 text-[11px] font-medium tracking-[0.08em] transition-colors duration-300 sm:px-5 sm:text-xs ${activeTab === tab.id
                     ? "text-cyan-400"
                     : "text-slate-500 hover:text-slate-300"
-                }`}
+                  }`}
               >
                 {tab.label}
                 {activeTab === tab.id && (
@@ -806,9 +802,8 @@ const CAESES = () => {
                 <button
                   key={ind.title}
                   onClick={() => setActiveIndustry(i)}
-                  className={`relative flex w-full items-center gap-4 border-b border-white/[0.06] px-6 py-5 text-left transition-all duration-300 last:border-b-0 ${
-                    activeIndustry === i ? "bg-cyan-400/[0.06]" : "hover:bg-white/[0.025]"
-                  }`}
+                  className={`relative flex w-full items-center gap-4 border-b border-white/[0.06] px-6 py-5 text-left transition-all duration-300 last:border-b-0 ${activeIndustry === i ? "bg-cyan-400/[0.06]" : "hover:bg-white/[0.025]"
+                    }`}
                 >
                   {activeIndustry === i && (
                     <motion.span

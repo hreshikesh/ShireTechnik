@@ -1,10 +1,18 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import Container from "../../shared/Container";
 import Section from "../../shared/Section";
 import SectionHeading from "../../shared/SectionHeading";
 
 import ServiceCard from "./ServiceCard";
 import { services } from "./servicesData";
+
+// Route mapping — one place to control where each service card links
+const SERVICE_LINKS = {
+  1: "/solutions/cae-software",
+  2: "/solutions/cae-services",
+  3: "/hvac-products",
+};
 
 // Reusing our staggering variants
 const staggerContainer = {
@@ -41,24 +49,36 @@ const Services = () => {
           viewport={{ once: true, margin: "-100px" }}
           className="mx-auto mt-16 flex max-w-6xl flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8"
         >
-          {services.map((service) => (
-            <motion.div
-              key={service.id}
-              variants={{
-                hidden: { opacity: 0, y: 40, filter: "blur(8px)" },
-                show: {
-                  opacity: 1,
-                  y: 0,
-                  filter: "blur(0px)",
-                  transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
-                },
-              }}
-              // 2 per row on mobile, 3 per row from lg up
-              className="w-[calc(50%-0.5rem)] sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1.4rem)]"
-            >
-              <ServiceCard service={service} />
-            </motion.div>
-          ))}
+          {services.map((service) => {
+            // Resolve link — prefer service.link, fall back to lookup, then fallback route
+            const linkTo =
+              service.link || SERVICE_LINKS[service.id] || "/solutions";
+
+            return (
+              <motion.div
+                key={service.id}
+                variants={{
+                  hidden: { opacity: 0, y: 40, filter: "blur(8px)" },
+                  show: {
+                    opacity: 1,
+                    y: 0,
+                    filter: "blur(0px)",
+                    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+                  },
+                }}
+                // 2 per row on mobile, 3 per row from lg up
+                className="w-[calc(50%-0.5rem)] sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1.4rem)]"
+              >
+                <Link
+                  to={linkTo}
+                  className="block h-full rounded-2xl outline-none transition-transform duration-300 hover:-translate-y-1 focus-visible:ring-2 focus-visible:ring-cyan-400/50"
+                  aria-label={`Explore ${service.title || "service"}`}
+                >
+                  <ServiceCard service={service} />
+                </Link>
+              </motion.div>
+            );
+          })}
         </motion.div>
       </Container>
     </Section>

@@ -45,20 +45,21 @@ const contactInfo = [
 ];
 
 const subjectOptions = [
-  "Shipflow, software/consultancy",
+  "Electronics Cooling CFD  Analysis",
+  "HVAC CFD",
+  "Pyrosim",
+  "Pathfinder  software",
   "CAESES",
-  "HVAC CFD Work",
-  "Fire and Evacuation",
-  "Training",
   "Other",
 ];
 
 const fixedSubjects = [
-  "Shipflow, software/consultancy",
+   "Electronics Cooling CFD  Analysis",
+  "HVAC CFD",
+  "Pyrosim",
+  "Pathfinder  software",
   "CAESES",
-  "HVAC CFD Work",
-  "Fire and Evacuation",
-  "Training",
+  "Other",
 ];
 
 const initialForm = {

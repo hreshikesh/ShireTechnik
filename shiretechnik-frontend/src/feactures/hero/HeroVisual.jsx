@@ -30,7 +30,7 @@ const HeroVisual = () => {
       />
 
       <TechBadge text="CFD_SYS" className="bottom-[25%] left-[10%]" />
-      <TechBadge text="FEA_RUN" className="right-[15%] top-[25%]" />
+      <TechBadge text="CFD_RUN" className="right-[15%] top-[25%]" />
       <TechBadge text="OPT_AI" className="bottom-[10%] right-[30%]" />
 
       <StatusCard />

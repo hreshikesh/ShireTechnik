@@ -5,11 +5,12 @@ import man from "../../assets/images/about/man.webp"
 import snadeep from "../../assets/images/about/sandeep.webp";
 import pranjal from "../../assets/images/about/pranjal.webp";
 import pradeep from "../../assets/images/about/pradeep.webp";
+import archan from "../../assets/images/about/archan.webp";
 export const teamData = [
   {
     id: 1,
     name: "Debasis Panda",
-    designation: "Founder Director",
+    designation: "Founder Director,CEO",
     image: debasisImage,
     linkedin: "https://www.linkedin.com/in/debasis-panda-a87a245/"
   },
@@ -22,9 +23,9 @@ export const teamData = [
   },
   {
     id: 3,
-    name: "Archan Chaterjee",
+    name: "Archan Chatterjee",
     designation: "Director",
-    image:man ,
+    image:archan ,
     linkedin: ""
   },
   {

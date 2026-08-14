@@ -10,7 +10,8 @@ import {
 import mechHero from "../../assets/images/mechanical/hero.webp";
 import mechImg2 from "../../assets/images/mechanical/mech2.webp";
 import mechImg3 from "../../assets/images/mechanical/mech3.webp";
-
+import SEO from "../../seo/SEO";
+import { seoPages } from "../../seo/seoConfig";
 const benefits = [
   "Improved Product Performance",
   "Optimum Mechanical Design Solution",
@@ -74,7 +75,7 @@ const MechanicalDesign = () => {
 
   return (
     <main className="overflow-hidden bg-[#05080d] text-white">
-
+      <SEO {...seoPages.MechanicalDesign} />
       {/* HERO */}
       <section className="relative py-14 md:py-24 lg:py-32">
         <div

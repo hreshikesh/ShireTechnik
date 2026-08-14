@@ -11,7 +11,8 @@ import {
 } from "lucide-react";
 
 import logo from "../../assets/images/logo/logofull.webp";
-
+import SEO from "../../seo/SEO";
+import { seoPages } from "../../seo/seoConfig";
 const careers = [
   {
     icon: Ship,
@@ -53,7 +54,7 @@ const Careers = () => {
 
   return (
     <main className="overflow-hidden bg-[#05080d] text-white">
-
+      <SEO {...seoPages.Careers} />
       {/* ── HERO ── */}
       <section className="relative py-14 md:py-24 lg:py-32">
         <div
@@ -283,7 +284,7 @@ const Careers = () => {
         </div>
       </section>
 
-     
+
     </main>
   );
 };

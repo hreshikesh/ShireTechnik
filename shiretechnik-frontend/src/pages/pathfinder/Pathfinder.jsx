@@ -19,7 +19,8 @@ import {
 import pathfinderLogo  from "../../assets/images/pathfinder/pathfinder.webp";
 import pathfinderHero  from "../../assets/images/pyrosim/pyroHero.webp";
 
-
+import SEO from "../../seo/SEO";
+import { seoPages } from "../../seo/seoConfig";
 const tabs = [
   { id: "overview",      label: "Overview"      },
   { id: "features",      label: "Features"      },
@@ -156,6 +157,7 @@ const Carousel = ({ items, renderCard, desktopCols = 3 }) => {
 
   return (
     <div ref={ref} className="relative w-full">
+       <SEO {...seoPages.Pathfinder} />
       {showNav && (
         <div className="mb-5 flex justify-end gap-2">
           <button onClick={prev} disabled={current === 0} aria-label="Previous"

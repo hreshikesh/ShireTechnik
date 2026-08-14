@@ -7,15 +7,16 @@ import {
   Check,
 } from "lucide-react";
 
-import structHero   from "../../assets/images/structural/hero.webp";
-import structImg2   from "../../assets/images/structural/fea.webp";
-import staticImg    from "../../assets/images/structural/pole.webp";
-import modalImg     from "../../assets/images/structural/modal.webp";
-import harmonicImg  from "../../assets/images/structural/harmonic.webp";
-import randomImg    from "../../assets/images/structural/random.webp";
-import shockImg     from "../../assets/images/structural/shock.webp";
-import thermoImg    from "../../assets/images/structural/thermal.webp";
-
+import structHero from "../../assets/images/structural/hero.webp";
+import structImg2 from "../../assets/images/structural/fea.webp";
+import staticImg from "../../assets/images/structural/pole.webp";
+import modalImg from "../../assets/images/structural/modal.webp";
+import harmonicImg from "../../assets/images/structural/harmonic.webp";
+import randomImg from "../../assets/images/structural/random.webp";
+import shockImg from "../../assets/images/structural/shock.webp";
+import thermoImg from "../../assets/images/structural/thermal.webp";
+import SEO from "../../seo/SEO";
+import { seoPages } from "../../seo/seoConfig";
 const benefits = [
   "Improved Product Reliability",
   "Reduced Physical Prototyping Costs",
@@ -77,7 +78,7 @@ const StructuralAnalysis = () => {
 
   return (
     <main className="overflow-hidden bg-[#05080d] text-white">
-
+      <SEO {...seoPages.StructuralAnalysis} />
       {/* ── HERO ── */}
       <section className="relative py-14 md:py-24 lg:py-32">
         <div
@@ -299,11 +300,10 @@ const StructuralAnalysis = () => {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`relative shrink-0 rounded-xl border px-4 py-2.5 text-[11px] font-medium tracking-[0.06em] transition-all duration-300 sm:text-xs ${
-                  activeTab === tab.id
+                className={`relative shrink-0 rounded-xl border px-4 py-2.5 text-[11px] font-medium tracking-[0.06em] transition-all duration-300 sm:text-xs ${activeTab === tab.id
                     ? "border-cyan-400/30 bg-cyan-400/[0.08] text-cyan-400"
                     : "border-white/[0.07] bg-[#071019] text-slate-500 hover:border-white/[0.12] hover:text-slate-300"
-                }`}
+                  }`}
               >
                 {tab.label}
                 {activeTab === tab.id && (

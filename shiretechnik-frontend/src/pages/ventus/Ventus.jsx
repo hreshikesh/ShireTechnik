@@ -20,8 +20,8 @@ import {
 
 import ventusLogo  from "../../assets/images/ventus/ventuslogo.webp";
 import ventusHero  from "../../assets/images/ventus/ventusHero.webp";
-
-
+import { seoPages } from "../../seo/seoConfig";
+import SEO from "../../seo/SEO";
 const tabs = [
   { id: "overview",     label: "Overview"     },
   { id: "features",     label: "Features"     },
@@ -179,6 +179,7 @@ const Carousel = ({ items, renderCard, desktopCols = 3 }) => {
 
   return (
     <div ref={ref} className="relative w-full">
+       <SEO {...seoPages.Ventus} />
       {showNav && (
         <div className="mb-5 flex justify-end gap-2">
           <button onClick={prev} disabled={current === 0} aria-label="Previous"

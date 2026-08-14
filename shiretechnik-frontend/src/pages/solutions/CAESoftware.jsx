@@ -13,6 +13,9 @@ import {
 } from "lucide-react";
 
 import caeSoftwareImage from "../../assets/images/caesoftware/cae-software.webp";
+import SEO from "../../seo/SEO";
+import { seoPages } from "../../seo/seoConfig";
+import { serviceSchema } from "../../seo/structuredData";
 
 const software = [
   { id: "caeses", name: "CAESES", category: "Shape Optimization", path: "/solutions/cae-software/caeses" },
@@ -57,6 +60,15 @@ const CAESoftware = () => {
 
   return (
     <main className="overflow-hidden bg-[#05080d] text-white">
+      <SEO
+        {...seoPages.caeSoftware}
+        schema={serviceSchema({
+          name: "CAE Software Solutions",
+          description: "Enterprise CAE software including SOLIDWORKS Simulation, PyroSim, Pathfinder and Ventus.",
+          url: "/solutions/cae-software",
+          serviceType: "Software Licensing & Support",
+        })}
+      />
       {/* ===== INTRO + SOFTWARE SELECTOR ===== */}
       <section className="relative py-12 sm:py-16 md:py-24 lg:py-32">
         <div
@@ -120,9 +132,8 @@ const CAESoftware = () => {
                     </span>
                     <ChevronDown
                       size={16}
-                      className={`text-cyan-400 transition-transform duration-300 ${
-                        featuresOpen ? "rotate-180" : ""
-                      }`}
+                      className={`text-cyan-400 transition-transform duration-300 ${featuresOpen ? "rotate-180" : ""
+                        }`}
                     />
                   </button>
 
@@ -176,12 +187,11 @@ const CAESoftware = () => {
                           whileInView={{ opacity: 1, y: 0 }}
                           viewport={{ once: true }}
                           transition={{ duration: 0.5, delay: index * 0.08 }}
-                          className={`group rounded-2xl border border-white/[0.07] bg-white/[0.015] p-5 transition-all duration-300 hover:border-cyan-400/20 hover:bg-cyan-400/[0.03] ${
-                            index === features.length - 1 &&
-                            features.length % 2 !== 0
+                          className={`group rounded-2xl border border-white/[0.07] bg-white/[0.015] p-5 transition-all duration-300 hover:border-cyan-400/20 hover:bg-cyan-400/[0.03] ${index === features.length - 1 &&
+                              features.length % 2 !== 0
                               ? "sm:col-span-2 sm:max-w-[calc(50%-6px)]"
                               : ""
-                          }`}
+                            }`}
                         >
                           <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-400/[0.06] text-cyan-400">
                             <Icon size={18} strokeWidth={1.5} />
@@ -210,9 +220,8 @@ const CAESoftware = () => {
                     </span>
                     <ChevronDown
                       size={16}
-                      className={`text-cyan-400 transition-transform duration-300 ${
-                        benefitsOpen ? "rotate-180" : ""
-                      }`}
+                      className={`text-cyan-400 transition-transform duration-300 ${benefitsOpen ? "rotate-180" : ""
+                        }`}
                     />
                   </button>
 
@@ -300,11 +309,10 @@ const CAESoftware = () => {
                     onMouseLeave={() => setHoveredSoftware(null)}
                     whileHover={{ x: 4 }}
                     whileTap={{ scale: 0.98 }}
-                    className={`relative flex w-full items-center gap-3 rounded-xl px-4 py-3.5 text-left transition-all duration-300 sm:gap-4 sm:rounded-2xl sm:px-5 sm:py-4 ${
-                      hoveredSoftware === item.id
+                    className={`relative flex w-full items-center gap-3 rounded-xl px-4 py-3.5 text-left transition-all duration-300 sm:gap-4 sm:rounded-2xl sm:px-5 sm:py-4 ${hoveredSoftware === item.id
                         ? "bg-cyan-400/[0.08]"
                         : "hover:bg-white/[0.03]"
-                    }`}
+                      }`}
                   >
                     {hoveredSoftware === item.id && (
                       <motion.span
@@ -315,18 +323,16 @@ const CAESoftware = () => {
                     )}
 
                     <span
-                      className={`font-mono text-[10px] ${
-                        hoveredSoftware === item.id ? "text-cyan-400" : "text-slate-700"
-                      }`}
+                      className={`font-mono text-[10px] ${hoveredSoftware === item.id ? "text-cyan-400" : "text-slate-700"
+                        }`}
                     >
                       0{index + 1}
                     </span>
 
                     <div className="min-w-0 flex-1">
                       <p
-                        className={`text-[13px] font-medium transition-colors duration-300 sm:text-sm ${
-                          hoveredSoftware === item.id ? "text-white" : "text-slate-500"
-                        }`}
+                        className={`text-[13px] font-medium transition-colors duration-300 sm:text-sm ${hoveredSoftware === item.id ? "text-white" : "text-slate-500"
+                          }`}
                       >
                         {item.name}
                       </p>
@@ -337,9 +343,8 @@ const CAESoftware = () => {
 
                     <ArrowUpRight
                       size={15}
-                      className={`shrink-0 transition-colors duration-300 ${
-                        hoveredSoftware === item.id ? "text-cyan-400" : "text-slate-700"
-                      }`}
+                      className={`shrink-0 transition-colors duration-300 ${hoveredSoftware === item.id ? "text-cyan-400" : "text-slate-700"
+                        }`}
                     />
                   </motion.button>
                 ))}

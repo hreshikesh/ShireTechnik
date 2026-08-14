@@ -8,7 +8,8 @@ import {
 } from "lucide-react";
 
 import hvacHero from "../../assets/images/havc/hvac.webp";
-
+import SEO from "../../seo/SEO";
+import { seoPages } from "../../seo/seoConfig";
 const metrics = [
   { label: "PMV / PPD", sub: "Thermal comfort & ADPI" },
   { label: "TC9.9", sub: "Rack inlet compliance" },
@@ -97,7 +98,7 @@ const HVACDesign = () => {
 
   return (
     <main className="overflow-hidden bg-[#05080d] text-white">
-
+      <SEO {...seoPages.HVACDesign} />
       {/* HERO */}
       <section className="relative py-14 md:py-24 lg:py-32">
         <div

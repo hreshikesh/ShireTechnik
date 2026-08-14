@@ -12,7 +12,9 @@ import {
   Search,
   Thermometer,
 } from "lucide-react";
-
+import SEO from "../../seo/SEO";
+import { seoPages } from "../../seo/seoConfig";
+import { serviceSchema } from "../../seo/structuredData";
 const services = [
   {
     id: "fea",
@@ -38,14 +40,7 @@ const services = [
     description:
       "Simulate and analyze the behavior of mechanical systems under real-world conditions. Our MBD services help you assess system motion, component interactions, and overall performance.",
   },
-  {
-    id: "fatigue",
-    number: "04",
-    title: "Fatigue and Durability Analysis",
-    icon: ShieldCheck,
-    description:
-      "Ensure your products withstand time and usage with our fatigue and durability simulations. We provide insights into potential failure points, helping you extend product life cycles.",
-  },
+ 
   {
     id: "optimization",
     number: "05",
@@ -102,7 +97,15 @@ const CAEServices = () => {
 
   return (
     <main className="overflow-hidden bg-[#05080d] text-white">
-      {/* ===== INTRO + SERVICE FOCUS ===== */}
+       <SEO
+        {...seoPages.CAEServices}
+        schema={serviceSchema({
+          name: "CAE Services",
+          description: "Enterprise CAE services including thermal,HVAC,Mechanical,Structural Design.",
+          url: "/solutions/cae-services",
+          serviceType: "Design & Support",
+        })}
+      />
       <section className="relative py-12 sm:py-16 md:py-24 lg:py-32">
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.025]"
