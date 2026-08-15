@@ -185,7 +185,7 @@ const Expertise = () => {
   return (
     <section
       id="services"
-      className="relative overflow-hidden bg-[#05080d] py-32 text-white md:py-44 scroll-mt-24"
+      className="relative overflow-hidden bg-[#05080d] py-32 text-white md:py-44 "
     >
       {/* Background grid */}
       <div

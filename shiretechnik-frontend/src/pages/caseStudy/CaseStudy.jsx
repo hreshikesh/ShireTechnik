@@ -387,12 +387,12 @@ const CaseStudies = () => {
                 Request Case Study
                 <ArrowUpRight size={15} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </button>
-              <button
-                onClick={() => navigate("/solutions/cae-services")}
-                className="flex w-full items-center justify-center gap-2 rounded-xl border border-white/10 px-7 py-3.5 text-sm font-medium text-slate-400 transition hover:border-white/20 hover:text-white sm:w-auto"
+              <a
+                href="/solutions/cae-services"
+                className="flex w-full items-center justify-center gap-2 rounded-xl border border-white/10 px-7 py-3.5 text-sm font-medium text-slate-400 transition hover:border-white/20 hover:text-white sm:w-auto scroll-mt-24"
               >
                 View All Services
-              </button>
+              </a>
             </div>
           </div>
         </motion.section>

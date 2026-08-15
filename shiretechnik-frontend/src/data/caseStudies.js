@@ -58,7 +58,7 @@ export const caseStudies = [
     title:
       "Thermal Vias Modeling for Simulation",
     description:
-      "In this article, we will discuss about the different PCB (Printed Circuit Board) modelling approaches that are widely used in thermal simulation analysis and also examine their accuracy for the temperature predictions. ",
+      "This Paper elaborates about the different PCB (Printed Circuit Board) modelling approaches that are widely used in thermal simulation analysis and also examine their accuracy for the temperature predictions. ",
     tags: [" Thermal Conductivity", "PCB","Isotropic Conductivity ","Orthotropic Thermal Conductivity "],
     pdfUrl: pcbWhitepaper,
   },

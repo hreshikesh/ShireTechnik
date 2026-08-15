@@ -150,7 +150,7 @@ const ThermalApplicationsSection = () => {
               <Search size={15} className="mr-2 shrink-0 text-slate-500" />
               <input
                 type="text"
-                placeholder="Search across 100+ thermal applications..."
+                placeholder="Search thermal applications..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full bg-transparent text-white placeholder-slate-500 outline-none"

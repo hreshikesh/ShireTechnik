@@ -74,27 +74,5 @@ export const whyData = [
     ]
   },
 
-  {
-    id: 3,
-    title: "Training",
 
-    heading: "Industrial Training",
-
-    description:
-      "Professional training programs for students and engineers.",
-
-    image: training,
-
-    stats: [
-      { label: "Students", value: 4000 },
-      { label: "Programs", value: 60 },
-      { label: "Partners", value: 25 }
-    ],
-
-    features: [
-      "Corporate",
-      "Certification",
-      "Hands-on Labs"
-    ]
-  }
 ];

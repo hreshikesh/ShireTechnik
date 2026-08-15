@@ -1,6 +1,7 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { teamData } from "../../../data/teamData";
+import logo from "../../../assets/images/logo/logofull.webp";
 
 const LinkedinIcon = ({ size = 18, className = "" }) => (
   <svg
@@ -15,7 +16,7 @@ const LinkedinIcon = ({ size = 18, className = "" }) => (
   </svg>
 );
 
-const MemberCard = ({ member, index }) => {
+const MemberCard = ({ member, index, onOpen }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -55,21 +56,20 @@ const MemberCard = ({ member, index }) => {
             }`}
           />
 
-          {/* Corner accents */}
-          <span
-            className={`absolute left-4 top-4 border-l border-t border-cyan-400/60 h-7 w-7 opacity-100 transition-all duration-500 ${
-              isHovered
-                ? "md:h-7 md:w-7 md:opacity-100"
-                : "md:h-0 md:w-0 md:opacity-0"
-            }`}
-          />
-          <span
-            className={`absolute bottom-4 right-4 border-b border-r border-cyan-400/60 h-7 w-7 opacity-100 transition-all duration-500 delay-75 ${
-              isHovered
-                ? "md:h-7 md:w-7 md:opacity-100"
-                : "md:h-0 md:w-0 md:opacity-0"
-            }`}
-          />
+          {/* Logo at left corner (always visible on hover, but we place it always) */}
+          <div className="absolute left-4 top-4 z-10">
+            <img
+              src={logo}
+              alt="Shiretechnik"
+              className={`h-8 w-auto transition-all duration-500 ${
+                isHovered
+                  ? "md:opacity-100 md:translate-y-0"
+                  : "md:opacity-80 md:translate-y-0" // keep visible but subtle
+              }`}
+            />
+          </div>
+
+
 
           {/* ID badge */}
           <div
@@ -84,22 +84,18 @@ const MemberCard = ({ member, index }) => {
             </span>
           </div>
 
-          {/* LinkedIn button */}
-          {member.linkedin && (
-            <a
-              href={member.linkedin}
-              target="_blank"
-              rel="noreferrer"
-              className={`absolute bottom-20 right-4 flex h-10 w-10 items-center justify-center rounded-full border border-cyan-400/30 bg-[#0a0f1a]/80 text-cyan-400 backdrop-blur-sm translate-y-0 scale-100 opacity-100 transition-all duration-500 hover:border-cyan-400 hover:bg-cyan-400/20 hover:scale-110 active:scale-90 ${
-                isHovered
-                  ? "md:translate-y-0 md:scale-100 md:opacity-100"
-                  : "md:translate-y-4 md:scale-90 md:opacity-0"
-              }`}
-              style={{ transitionDelay: isHovered ? "100ms" : "0ms" }}
-            >
-              <LinkedinIcon size={16} />
-            </a>
-          )}
+          {/* Details button (appears on hover) */}
+          <button
+            onClick={() => onOpen(member)}
+            className={`absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 rounded-full border border-cyan-400/30 bg-[#0a0f1a]/80 px-4 py-2 text-xs font-medium uppercase tracking-wider text-cyan-400 backdrop-blur-sm transition-all duration-500 hover:border-cyan-400 hover:bg-cyan-400/20 hover:scale-105 active:scale-95 ${
+              isHovered
+                ? "md:translate-y-0 md:opacity-100 md:scale-100"
+                : "md:translate-y-4 md:opacity-0 md:scale-90"
+            }`}
+            style={{ transitionDelay: isHovered ? "100ms" : "0ms" }}
+          >
+            Details
+          </button>
         </div>
 
         {/* Info */}
@@ -137,6 +133,7 @@ const MemberCard = ({ member, index }) => {
 
 const Team = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [selectedMember, setSelectedMember] = useState(null);
 
   const firstRow = teamData.slice(0, 4);
   const secondRow = teamData.slice(4);
@@ -149,6 +146,15 @@ const Team = () => {
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
   };
+
+  // Close modal on Escape key
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") setSelectedMember(null);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   return (
     <section className="relative overflow-hidden bg-[#05080d] py-10 text-white md:py-10">
@@ -214,12 +220,12 @@ const Team = () => {
             >
               {teamData.map((member, index) => (
                 <div key={member.id} className="w-full shrink-0">
-                  <MemberCard member={member} index={index} />
+                  <MemberCard member={member} index={index} onOpen={setSelectedMember} />
                 </div>
               ))}
             </motion.div>
 
-            {/* Arrows */}
+            Arrows
             <button
               type="button"
               onClick={prevSlide}
@@ -260,7 +266,7 @@ const Team = () => {
           {/* FIRST ROW - 4 cards */}
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {firstRow.map((member, index) => (
-              <MemberCard key={member.id} member={member} index={index} />
+              <MemberCard key={member.id} member={member} index={index} onOpen={setSelectedMember} />
             ))}
           </div>
 
@@ -272,6 +278,7 @@ const Team = () => {
                   key={member.id}
                   member={member}
                   index={index + firstRow.length}
+                  onOpen={setSelectedMember}
                 />
               ))}
             </div>
@@ -303,6 +310,83 @@ const Team = () => {
           ))}
         </motion.div>
       </div>
+
+      {/* MODAL */}
+      <AnimatePresence>
+        {selectedMember && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4"
+            onClick={() => setSelectedMember(null)}
+          >
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
+
+            {/* Modal content */}
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              transition={{ type: "spring", stiffness: 300, damping: 25 }}
+              className="relative w-full max-w-2xl overflow-hidden rounded-2xl border border-cyan-400/20 bg-[#0a0f1a] p-6 md:p-8"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close button */}
+              <button
+                onClick={() => setSelectedMember(null)}
+                className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full border border-white/10 text-slate-400 transition-colors hover:border-cyan-400/50 hover:text-cyan-400"
+                aria-label="Close modal"
+              >
+                ✕
+              </button>
+
+              {/* Logo */}
+              <div className="mb-4 flex justify-center">
+                <img src={logo} alt="Shiretechnik" className="h-10 w-auto" />
+              </div>
+
+              {/* Header */}
+              <div className="flex flex-col md:flex-row gap-6 items-center">
+                <div className="relative h-32 w-32 md:h-40 md:w-40 shrink-0 overflow-hidden rounded-xl border border-white/10">
+                  <img
+                    src={selectedMember.image}
+                    alt={selectedMember.name}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                <div className="text-center md:text-left">
+                  <h3 className="text-2xl font-semibold tracking-tight text-white">
+                    {selectedMember.name}
+                  </h3>
+                  <p className="mt-1 text-sm uppercase tracking-[0.15em] text-cyan-400">
+                    {selectedMember.designation}
+                  </p>
+                  {selectedMember.linkedin && (
+                    <a
+                      href={selectedMember.linkedin}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-3 inline-flex items-center gap-2 text-sm text-cyan-400 hover:text-cyan-300 transition-colors"
+                    >
+                      <LinkedinIcon size={16} />
+                      LinkedIn Profile
+                    </a>
+                  )}
+                </div>
+              </div>
+
+              {/* Description */}
+              <div className="mt-6 max-h-[40vh] overflow-y-auto pr-2">
+                <p className="text-sm leading-7 text-slate-400">
+                  {selectedMember.desc}
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

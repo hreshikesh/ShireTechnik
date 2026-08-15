@@ -1,7 +1,7 @@
 export const awardData = [
   {
     id: 1,
-    value: 25,
+    value: 10,
     suffix: "+",
     title: "Team Members",
     description: "Multidisciplinary engineers, analysts and specialists",
@@ -9,7 +9,7 @@ export const awardData = [
   },
   {
     id: 2,
-    value: 500,
+    value: 100,
     suffix: "+",
     title: "Completed Projects",
     description: "Across marine, aerospace and industrial sectors",
@@ -25,10 +25,10 @@ export const awardData = [
   },
   {
     id: 4,
-    value: 20,
+    value: 10,
     suffix: "+",
     title: "Years Experience",
     description: "Combined expertise across our engineering team",
-    metric: "SINCE 2010",
+    metric: "SINCE 2016",
   },
 ];
