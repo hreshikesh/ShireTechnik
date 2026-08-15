@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { teamData } from "../../aboutHome/teamData";
+import { teamData } from "../../../data/teamData";
 
 const LinkedinIcon = ({ size = 18, className = "" }) => (
   <svg
