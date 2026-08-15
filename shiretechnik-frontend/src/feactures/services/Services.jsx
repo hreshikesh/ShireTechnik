@@ -11,7 +11,6 @@ import { services } from "./servicesData";
 const SERVICE_LINKS = {
   1: "/solutions/cae-software",
   2: "/solutions/cae-services",
-  3: "/hvac-products",
 };
 
 // Reusing our staggering variants
@@ -36,12 +35,6 @@ const Services = () => {
           title="Engineering Solutions Built For Modern Industries."
           description="Deploying high-fidelity analytics and software architectures to solve the most complex industrial constraints."
         />
-
-        {/*
-          Flexbox instead of a fixed grid so a leftover single card
-          on the last row (e.g. 3rd card with a 2-per-row layout)
-          centers itself automatically instead of hugging the left.
-        */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -67,7 +60,7 @@ const Services = () => {
                   },
                 }}
                 // 2 per row on mobile, 3 per row from lg up
-                className="w-[calc(50%-0.5rem)] sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1.4rem)]"
+                className="w-[calc(20%-0.5rem)] sm:w-[calc(50%-0.75rem)] lg:w-[calc(50%-1.4rem)]"
               >
                 <Link
                   to={linkTo}

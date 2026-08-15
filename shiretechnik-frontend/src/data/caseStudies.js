@@ -3,8 +3,9 @@ import Ele from "../assets/pdf/resources/SSPL_Thermal Management of Electrical E
 import heatSink from "../assets/pdf/resources/SSPL_Heatsink Design Optimization_CaseStudies.pdf";
 import busbar from "../assets/pdf/resources/SSPL_Busbar Thermal Analysis_CaseStudy.pdf";
 import vias from "../assets/pdf/resources/Case Study Thermal Vias.pdf"
-
-
+import pcbWhitepaper from "../assets/pdf/resources/PCB Modeling for Thermal Analysis.pdf";
+import viaswhitepaper from "../assets/pdf/resources/Thermal Vias Modeling in PCB.pdf";
+import peltier from "../assets/pdf/resources/SSPL_Thermal_Analysis_CaseStudy_WPD_v0.2.pdf"
 export const caseStudies = [
   {
     id: "SSPLTFD2501-28",
@@ -47,7 +48,40 @@ export const caseStudies = [
       "Case Study on Thermal Vias Modeling for Simulation",
     description:
       "An extract from “Thermal Vias Modelling in PCB for Simulation” white paper authored by Shankar S, Debasis Panda, and Milind Kothe",
-    tags: ["thermal resistance", "PCB","Natural Cooling Mode","Forced Cooling Mode","Lumped Vias Array Model”"],
+    tags: ["thermal resistance", "PCB","Natural Cooling Mode","Forced Cooling Mode","Lumped Vias Array Model"],
     pdfUrl: vias,
+  },
+          {
+    id: "SSPLTFD2503-32",
+    category: "PCB Thermal Modelling",
+    categoryId: "whitepaper",
+    title:
+      "Thermal Vias Modeling for Simulation",
+    description:
+      "In this article, we will discuss about the different PCB (Printed Circuit Board) modelling approaches that are widely used in thermal simulation analysis and also examine their accuracy for the temperature predictions. ",
+    tags: [" Thermal Conductivity", "PCB","Isotropic Conductivity ","Orthotropic Thermal Conductivity "],
+    pdfUrl: pcbWhitepaper,
+  },
+            {
+    id: "SSPLTFD2503-33",
+    category: "Thermal Vias Modelling in PCB for Simulation ",
+    categoryId: "whitepaper",
+    title:
+      "Thermal Vias Modelling in PCB for Simulation ",
+    description:
+      "Paper elaborates about the various thermal vias modelling approaches commonly used. ",
+    tags: ["Thermal vias ", "Vias","Natural Cooling ","“Lumped Vias Array Model"],
+    pdfUrl: viaswhitepaper,
+  },
+  {
+    id: "SSPLTFD2503-34",
+    category: "Wearable Peltier Device",
+    categoryId: "thermal",
+    title:
+      "Case Study on Wearable Peltier Device ",
+    description:
+      "Wearable Peltier Device is a headband version operable to fit around a user's head.",
+    tags: ["TEC", " thermal performance","BoM","optimization"],
+    pdfUrl: peltier,
   },
 ];

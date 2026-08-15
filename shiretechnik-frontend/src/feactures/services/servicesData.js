@@ -19,12 +19,4 @@ export const services = [
     icon: Hexagon,
     image: caeEng
   },
-  {
-    id: 3,
-    sysId: "MOD-03",
-    title: "HAVC Product Solutions",
-    description: "We specialize in providing top-notch HVAC solutions tailored to your unique needs.",
-    icon: GraduationCap,
-    image: trainingImg
-  }
 ];

@@ -15,18 +15,17 @@ import SEO from "../../seo/SEO";
 import { seoPages } from "../../seo/seoConfig";
 const careers = [
   {
-    icon: Ship,
-    title: "Maritime Engineering",
-    description:
-      "Work on advanced CFD simulations, hydrodynamic optimization, naval architecture, and ship performance analysis for global marine projects.",
-    skills: ["CFD", "Hydrodynamics", "Hull Optimization", "Naval Architecture"],
-  },
-  {
     icon: Cog,
-    title: "Turbomachinery",
+    title: "ELECTRO-MECHANICAL ENGINEER",
     description:
-      "Design and optimize pumps, compressors, turbines, fans, and rotating machinery using advanced engineering simulation tools.",
-    skills: ["Pumps", "Compressors", "Turbines", "Rotating Equipment"],
+      "Design and package electronic systems, optimizing thermal performance, packaging density, structural integrity, and reliability using 3D CAD and simulation tools.",
+    skills: [
+      "Electronic Packaging",
+      "SolidWorks 3D CAD",
+      "Thermal Analysis",
+      "Design for Reliability",
+      "Verification & Validation",
+    ],
   },
   {
     icon: Flame,
@@ -145,7 +144,7 @@ const Careers = () => {
             </h2>
           </motion.div>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {careers.map((career, i) => {
               const Icon = career.icon;
               return (

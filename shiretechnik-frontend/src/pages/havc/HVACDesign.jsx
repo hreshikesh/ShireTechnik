@@ -18,9 +18,6 @@ const metrics = [
 
 const hvacServices = [
   "Thermal comfort & indoor air quality — airflow, temperature, humidity, pollutant dispersion",
-  "Fire and smoke modeling for ventilation and suppression system design",
-  "HVAC equipment design — fans, heat exchangers, ducting, pumps, compressors",
-  "Carpark & tunnel ventilation, including CO control and jet-fan systems",
   "Industrial systems — process airflow balanced with occupant comfort (PMV/PPD, ADPI)",
 ];
 

@@ -25,7 +25,7 @@ import Meeting from "../pages/meeting/Meeting";
 import { Toaster } from "sonner";
 import SessionTimeout from "../feactures/auth/SessionTimeout";
 import AuthManager from "../feactures/auth/AuthManager";
-import HvacProducts from "../pages/hvac-product/HvacProducts";
+
 
 // Admin Imports
 import AdminRoute from "./AdminRoutes";
@@ -60,8 +60,7 @@ const AppRouter = () => {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/careers" element={<Careers />} />
-            <Route path="/hvac-products" element={<HvacProducts />} />
-
+  
             {/* CAE Software */}
             <Route path="/solutions/cae-software" element={<CAESoftware />} />
             <Route path="/solutions/cae-software/caeses" element={<CAESES />} />
