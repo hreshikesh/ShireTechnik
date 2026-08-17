@@ -263,7 +263,7 @@ const ThermalApplicationsSection = () => {
                               className="flex w-full items-center justify-between text-xs font-medium text-slate-300 transition hover:text-cyan-400"
                             >
                               <span className="flex items-center gap-2">
-                                <Eye size={14} /> View White Paper
+                                <Eye size={14} /> View Catalogue
                               </span>
                               <ChevronRight size={14} />
                             </button>
