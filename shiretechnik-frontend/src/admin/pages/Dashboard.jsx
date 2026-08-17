@@ -78,7 +78,7 @@ function Dashboard() {
         <div className="bg-white p-2">
           <iframe
             title="Meeting Calendar"
-            src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FKolkata&showPrint=0&src=YWlsaHJlc2hpa2VzaEBnbWFpbC5jb20&src=ZmFtaWx5MDA0NjUwMTcwNzQ5NjEwNTkyOTBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=Y2xhc3Nyb29tMTE4MDY2NTk3NTE1NDA4MDU5MjczQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y2xhc3Nyb29tMTE3ODQ1Mzg4MDQ3Njc5MDY1OTk4QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=ZW4uaW5kaWFuI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=Y2xhc3Nyb29tMTA3OTIxNzY0Njg2OTc0NTg2MzcyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23ef6c00&color=%23b39ddb&color=%231967d2&color=%23c26401&color=%230b8043&color=%23202124"
+            src="https://calendar.google.com/calendar/embed?src=info%40shiretechnik.com&ctz=Asia%2FKolkata&showPrint=0&src=YWlsaHJlc2hpa2VzaEBnbWFpbC5jb20&src=ZmFtaWx5MDA0NjUwMTcwNzQ5NjEwNTkyOTBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=Y2xhc3Nyb29tMTE4MDY2NTk3NTE1NDA4MDU5MjczQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=Y2xhc3Nyb29tMTE3ODQ1Mzg4MDQ3Njc5MDY1OTk4QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=ZW4uaW5kaWFuI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=Y2xhc3Nyb29tMTA3OTIxNzY0Njg2OTc0NTg2MzcyQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23ef6c00&color=%23b39ddb&color=%231967d2&color=%23c26401&color=%230b8043&color=%23202124"
             className="h-[500px] w-full rounded-lg border-0"
           />
         </div>
