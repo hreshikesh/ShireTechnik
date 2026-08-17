@@ -5,6 +5,7 @@ import sandeep from "../assets/images/about/sandeep.webp";
 import pranjal from "../assets/images/about/pranjal.webp";
 import pradeep from "../assets/images/about/pradeep.webp";
 import archan from "../assets/images/about/archan.webp";
+import sarang from "../assets/images/about/sarang.webp";
 
 export const teamData = [
   {
@@ -59,7 +60,7 @@ export const teamData = [
     id: 7,
     name: "Sarang Shidore",
     designation: "Advisory Board Member",
-    image: man,
+    image: sarang,
     linkedin: "https://www.linkedin.com/in/sandeep-nandi-06409310/", // Note: This is the same LinkedIn as Sandeep, likely a placeholder
     desc: "Sarang Shidore is an expert in semiconductor thermal phenomena and corporate strategy and product planning. He received his Bachelor’s degree from the Indian Institute of Technology, Madras, and his Master’s degree from the University of Texas, Austin. Since 1995, he worked at Flomerics Inc., at Austin, TX, in various roles in engineering and product management with a special focus on package-level thermal modeling and analysis, a field in which he authored several papers and articles, and also developed two international standards as Vice-Chair of the JC15 committee of JEDEC, the international standards body for the semiconductor industry. At Flomerics, he had worldwide product responsibilities – from roadmaps to rollout. He Conceptualized and created two web-based software products in semiconductor thermal analysis catering to several Fortune 500 companies such as Texas Instruments, Intel, ST Microelectronics, etc. The product made a quantum leap in Flomerics’ offerings to the semiconductor industry. He was also key in establishing the Flomerics Development Centre in Bangalore. In addition, he worked for Mentor Graphics as Product Marketing Manager and for several years as a consultant for various organizations. He is currently a visiting scholar at the Lyndon B. Johnson School of Public Affairs at the University of Texas at Austin, focused on energy and climate policy and engaged in consulting in strategy and scenario planning."
   }
