@@ -54,7 +54,7 @@ const Footer = () => {
               <Clock className="mt-1 shrink-0 text-cyan-400" size={18} />
               <div>
                 <h4 className="font-semibold text-cyan-400">Open Hours</h4>
-                <p className="mt-1 text-gray-400">Mon – Sat : 9:00 AM – 6:00 PM</p>
+                <p className="mt-1 text-gray-400">Mon – Fri : 9:00 AM – 6:00 PM</p>
                 <p className="text-gray-400">Sunday : Closed</p>
               </div>
             </div>

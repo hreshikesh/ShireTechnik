@@ -1,5 +1,5 @@
 function FloatingWhatsAppButton() {
-  const whatsappNumber = "8023415100";
+  const whatsappNumber = "919632012800";
 
   const handleWhatsAppClick = () => {
     const defaultMessage = encodeURIComponent(

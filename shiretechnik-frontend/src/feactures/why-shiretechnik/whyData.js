@@ -50,29 +50,29 @@ export const whyData = [
     ]
   },
 
-  {
-    id: 2,
-    title: "HVAC Solutions",
+  // {
+  //   id: 2,
+  //   title: "HVAC Solutions",
 
-    heading: "Comprehensive HVAC Design Services",
+  //   heading: "Comprehensive HVAC Design Services",
 
-    description:
-      "CFD-driven ventilation and air distribution design that meets ASHRAE, NBC and WHO standards for safe, efficient buildings.",
+  //   description:
+  //     "CFD-driven ventilation and air distribution design that meets ASHRAE, NBC and WHO standards for safe, efficient buildings.",
 
-    image: hvac,
+  //   image: hvac,
 
-    stats: [
-      { label: "Projects", value: 150 },
-      { label: "Standards Met", value: 3 },
-      { label: "Years", value: 15 }
-    ],
+  //   stats: [
+  //     { label: "Projects", value: 150 },
+  //     { label: "Standards Met", value: 3 },
+  //     { label: "Years", value: 15 }
+  //   ],
 
-    features: [
-      "Ventilation Design",
-      "Air Distribution",
-      "Smoke & Fire Control"
-    ]
-  },
+  //   features: [
+  //     "Ventilation Design",
+  //     "Air Distribution",
+  //     "Smoke & Fire Control"
+  //   ]
+  // },
 
 
 ];

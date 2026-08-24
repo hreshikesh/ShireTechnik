@@ -48,13 +48,13 @@ const expertise = [
     icon: Thermometer,
     link: "/solutions/cae-services/thermal-design",
   },
-  {
-    id: "hvac",
-    number: "06",
-    title: "HVAC Design",
-    icon: Cpu,
-    link: "/solutions/cae-services/hvac-design",
-  },
+  // {
+  //   id: "hvac",
+  //   number: "06",
+  //   title: "HVAC Design",
+  //   icon: Cpu,
+  //   link: "/solutions/cae-services/hvac-design",
+  // },
   {
     id: "mechanical",
     number: "07",

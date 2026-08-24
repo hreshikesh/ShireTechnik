@@ -17,48 +17,38 @@ import { seoPages } from "../../seo/seoConfig";
 import { serviceSchema } from "../../seo/structuredData";
 const services = [
   {
-    id: "fea",
+    id: "electronic-cooling",
     number: "01",
-    title: "Finite Element Analysis (FEA)",
-    icon: Layers3,
+    title: "Electronic Cooling CFD Analysis",
+    icon: Thermometer,
     description:
-      "Optimize product performance with detailed stress, vibration, and structural analysis using advanced FEA tools. Our experts ensure that your designs meet strength, safety, and durability standards before physical prototypes are created.",
+      "Ensure electronic and mechanical components operate within safe thermal limits through advanced CFD airflow simulations, thermal management, and heat dissipation modeling.",
   },
-  {
-    id: "cfd",
-    number: "02",
-    title: "Computational Fluid Dynamics (CFD)",
-    icon: Activity,
-    description:
-      "Leverage CFD simulations to accurately predict fluid flow, heat transfer, and thermal management in your designs. Our solutions help you improve efficiency and reduce operational costs.",
-  },
-  {
-    id: "mbd",
-    number: "03",
-    title: "Multibody Dynamics (MBD)",
-    icon: Settings2,
-    description:
-      "Simulate and analyze the behavior of mechanical systems under real-world conditions. Our MBD services help you assess system motion, component interactions, and overall performance.",
-  },
- 
   {
     id: "optimization",
-    number: "05",
+    number: "02",
     title: "Optimization and Design Exploration",
     icon: Search,
     description:
       "Maximize performance while minimizing material use and costs with our optimization techniques. We help you explore multiple design alternatives quickly and efficiently.",
   },
   {
-    id: "thermal",
-    number: "06",
-    title: "Thermal and Electromagnetic Analysis",
-    icon: Thermometer,
+    id: "cfd",
+    number: "03",
+    title: "Computational Fluid Dynamics (CFD)",
+    icon: Activity,
     description:
-      "Our thermal and electromagnetic simulations help ensure that electronic and mechanical components work safely under various thermal conditions and electromagnetic fields.",
+      "Leverage CFD simulations to accurately predict fluid flow, heat transfer, and thermal management in your designs. Our solutions help you improve efficiency and reduce operational costs.",
+  },
+  {
+    id: "fea",
+    number: "04",
+    title: "Finite Element Analysis (FEA)",
+    icon: Layers3,
+    description:
+      "Optimize product performance with detailed stress, vibration, and structural analysis using advanced FEA tools. Our experts ensure that your designs meet strength, safety, and durability standards before physical prototypes are created.",
   },
 ];
-
 const industries = [
   { title: "Automotive", text: "Enhancing vehicle performance, safety, and fuel efficiency." },
   { title: "Aerospace", text: "Supporting structural integrity, aerodynamics, and thermal management." },
@@ -83,7 +73,7 @@ const benefits = [
 
 const serviceFocus = [
   { label: "Thermal Design Services", path: "/solutions/cae-services/thermal-design" },
-  { label: "HVAC Design Services", path: "/solutions/cae-services/hvac-design" },
+  // { label: "HVAC Design Services", path: "/solutions/cae-services/hvac-design" },
   { label: "Mechanical Design Services", path: "/solutions/cae-services/mechanical-design" },
   { label: "Structural Design Services", path: "/solutions/cae-services/structural-design" },
 ];
@@ -224,7 +214,7 @@ const CAEServices = () => {
       </section>
 
       {/* ===== SERVICES ===== */}
-      <section className="border-y border-white/[0.06] bg-[#071019] py-12 sm:py-16 md:py-24 lg:py-28">
+      <section className="border-y border-white/[0.06] bg-[#071019] py-12 sm:py-12 md:py-12 lg:py-12">
         <div className="mx-auto max-w-[1400px] px-5 sm:px-6 md:px-10">
           <div className="mb-6 sm:mb-8 md:mb-10">
             <span className="text-[9px] tracking-[0.3em] text-cyan-400 sm:text-[10px]">

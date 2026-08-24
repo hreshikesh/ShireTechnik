@@ -185,7 +185,7 @@ const AboutHero = () => {
             className="absolute bottom-[12%] right-[0%] rounded-xl border border-white/[0.08] bg-[#071019]/80 px-4 py-2.5 backdrop-blur-sm"
           >
             <span className="text-[10px] font-medium tracking-[0.15em] text-cyan-400">
-              HVAC
+              Caeses
             </span>
             <p className="mt-0.5 text-[8px] tracking-wider text-slate-600">
               Airflow Design
