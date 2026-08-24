@@ -15,14 +15,14 @@ export const awardData = [
     description: "Across marine, aerospace and industrial sectors",
     metric: "GLOBAL SCALE",
   },
-  {
-    id: 3,
-    value: 15,
-    suffix: "+",
-    title: "Awards Won",
-    description: "Industry recognition for engineering excellence",
-    metric: "RECOGNIZED",
-  },
+  // {
+  //   id: 3,
+  //   value: 15,
+  //   suffix: "+",
+  //   title: "Awards Won",
+  //   description: "Industry recognition for engineering excellence",
+  //   metric: "RECOGNIZED",
+  // },
   {
     id: 4,
     value: 10,

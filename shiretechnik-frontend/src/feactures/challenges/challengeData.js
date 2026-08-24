@@ -22,11 +22,5 @@ export const challengeData = [
     description:
       "Excessive reliance on physical testing drives up manufacturing overhead and wastes valuable engineering hours.",
   },
-  {
-    id: "ERR-04",
-    icon: ShieldAlert,
-    title: "Structural Integrity Risks",
-    description:
-      "Unforeseen stress concentrations and fatigue failures discovered too late in the production cycle.",
-  },
+
 ];

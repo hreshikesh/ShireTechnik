@@ -80,7 +80,7 @@ const BusinessAwards = () => {
           style={{ y: parallaxY }}
           className="mt-16 md:mt-20 lg:mt-24"
         >
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-3">
             {awardData.map((item, index) => (
               <StatCard key={item.id} item={item} index={index} />
             ))}
