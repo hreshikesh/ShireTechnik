@@ -21,14 +21,15 @@ const navigation = [
   {
     label: "Solutions",
     children: [
-      {
-        label: "CAE Software Solutions",
-        path: "/solutions/cae-software",
-      },
-      {
+       {
         label: "CAE Service Solutions",
         path: "/solutions/cae-services",
       },
+      {
+        label: "CAE Software Solutions",
+        path: "/solutions/cae-software",
+      }
+     
     ],
   },
 

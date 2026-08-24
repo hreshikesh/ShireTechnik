@@ -27,11 +27,11 @@ export const teamData = [
   {
     id: 3,
     name: "Archan Chatterjee",
-    designation: "Director",
+    designation: "Director,Co Founder",
     image: archan,
     linkedin: "https://www.linkedin.com/in/archan-chatterjee-45083769/",
     desc: "Archan brings 20 years of experience across the HVAC and manufacturing industry. He has extensive expertise in HVAC products, project sales and services, and international marketing across South Asian markets. Notably, he initiated Aermec Spa's HVAC product business in South Asia and possesses a decade of specialized expertise in ventilation and air conditioning."
-  }
+  },
   {
     id: 4,
     name: "Sandeep Nandi",
