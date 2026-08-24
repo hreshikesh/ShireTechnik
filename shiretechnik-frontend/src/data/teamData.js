@@ -29,9 +29,9 @@ export const teamData = [
     name: "Archan Chatterjee",
     designation: "Director",
     image: archan,
-    linkedin: "",
-    desc: "Archan, having more than 15 years experience in the field of engineering sales and marketing. He has International marketing and business development experience. Expertise in new product promotions, sales, business strategy making."
-  },
+    linkedin: "https://www.linkedin.com/in/archan-chatterjee-45083769/",
+    desc: "Archan brings 20 years of experience across the HVAC and manufacturing industry. He has extensive expertise in HVAC products, project sales and services, and international marketing across South Asian markets. Notably, he initiated Aermec Spa's HVAC product business in South Asia and possesses a decade of specialized expertise in ventilation and air conditioning."
+  }
   {
     id: 4,
     name: "Sandeep Nandi",
@@ -61,7 +61,7 @@ export const teamData = [
     name: "Sarang Shidore",
     designation: "Advisory Board Member",
     image: sarang,
-    linkedin: "https://www.linkedin.com/in/sarangshidore/", 
+    linkedin: "https://www.linkedin.com/in/sarangshidore/",
     desc: "Sarang Shidore is an expert in semiconductor thermal phenomena and corporate strategy and product planning. He received his Bachelor’s degree from the Indian Institute of Technology, Madras, and his Master’s degree from the University of Texas, Austin. Since 1995, he worked at Flomerics Inc., at Austin, TX, in various roles in engineering and product management with a special focus on package-level thermal modeling and analysis, a field in which he authored several papers and articles, and also developed two international standards as Vice-Chair of the JC15 committee of JEDEC, the international standards body for the semiconductor industry. At Flomerics, he had worldwide product responsibilities – from roadmaps to rollout. He Conceptualized and created two web-based software products in semiconductor thermal analysis catering to several Fortune 500 companies such as Texas Instruments, Intel, ST Microelectronics, etc. The product made a quantum leap in Flomerics’ offerings to the semiconductor industry. He was also key in establishing the Flomerics Development Centre in Bangalore. In addition, he worked for Mentor Graphics as Product Marketing Manager and for several years as a consultant for various organizations. He is currently a visiting scholar at the Lyndon B. Johnson School of Public Affairs at the University of Texas at Austin, focused on energy and climate policy and engaged in consulting in strategy and scenario planning."
   }
 ];
