@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { teamData } from "../../../data/teamData";
+import { teamData, advisor } from "../../../data/teamData";
 import logo from "../../../assets/images/logo/logofull.webp";
 
 const LinkedinIcon = ({ size = 18, className = "" }) => (
@@ -31,7 +31,7 @@ const MemberCard = ({ member, index, onOpen }) => {
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="group relative"
+      className="group relative w-full max-w-[320px]"
     >
       <div className="relative overflow-hidden rounded-2xl border border-white/[0.06] bg-[#0a0f1a]">
         {/* Image */}
@@ -56,7 +56,7 @@ const MemberCard = ({ member, index, onOpen }) => {
             }`}
           />
 
-          {/* Logo at left corner (always visible on hover, but we place it always) */}
+          {/* Logo at left corner */}
           <div className="absolute left-4 top-4 z-10">
             <img
               src={logo}
@@ -64,12 +64,10 @@ const MemberCard = ({ member, index, onOpen }) => {
               className={`h-8 w-auto transition-all duration-500 ${
                 isHovered
                   ? "md:opacity-100 md:translate-y-0"
-                  : "md:opacity-80 md:translate-y-0" // keep visible but subtle
+                  : "md:opacity-80 md:translate-y-0"
               }`}
             />
           </div>
-
-
 
           {/* ID badge */}
           <div
@@ -84,7 +82,7 @@ const MemberCard = ({ member, index, onOpen }) => {
             </span>
           </div>
 
-          {/* Details button (appears on hover) */}
+          {/* Details button */}
           <button
             onClick={() => onOpen(member)}
             className={`absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 rounded-full border border-cyan-400/30 bg-[#0a0f1a]/80 px-4 py-2 text-xs font-medium uppercase tracking-wider text-cyan-400 backdrop-blur-sm transition-all duration-500 hover:border-cyan-400 hover:bg-cyan-400/20 hover:scale-105 active:scale-95 ${
@@ -100,7 +98,6 @@ const MemberCard = ({ member, index, onOpen }) => {
 
         {/* Info */}
         <div className="relative px-5 pb-6 pt-4">
-          {/* Animated line */}
           <div
             className={`absolute left-0 top-0 h-[1px] bg-gradient-to-r from-cyan-400 to-cyan-400/0 w-full transition-all duration-600 ease-out ${
               isHovered ? "md:w-full" : "md:w-0"
@@ -146,6 +143,9 @@ const Team = () => {
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
   };
+
+  // Normalize advisor data to always be an array
+  const advisorList = Array.isArray(advisor) ? advisor : advisor ? [advisor] : [];
 
   // Close modal on Escape key
   useEffect(() => {
@@ -225,7 +225,7 @@ const Team = () => {
               ))}
             </motion.div>
 
-            Arrows
+            {/* Arrows */}
             <button
               type="button"
               onClick={prevSlide}
@@ -284,6 +284,43 @@ const Team = () => {
             </div>
           </div>
         </div>
+
+        {/* SEPARATE ADVISORS SECTION */}
+        {advisorList.length > 0 && (
+          <div className="mt-16">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8 }}
+              className="mb-14 text-center"
+            >
+              <div className="mb-4 flex items-center justify-center gap-3 text-[10px] tracking-[0.35em] text-cyan-400">
+                <span className="h-px w-10 bg-cyan-400" />
+                ADVISORY BOARD
+                <span className="h-px w-10 bg-cyan-400" />
+              </div>
+              <h3 className="text-3xl font-semibold tracking-[-0.03em] md:text-4xl">
+                Strategic Guidance
+              </h3>
+              <div className="mx-auto mt-6 h-[1px] w-[80px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent" />
+            </motion.div>
+
+            {/* Using flex-wrap with justify-center so 1 or more advisors are always centered cleanly */}
+            <div className="flex justify-center items-center">
+              <div className="flex flex-wrap justify-center items-center gap-6 w-full max-w-[1050px]">
+                {advisorList.map((adv, index) => (
+                  <MemberCard
+                    key={adv.id || index}
+                    member={adv}
+                    index={index}
+                    onOpen={setSelectedMember}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Bottom stats */}
         <motion.div
