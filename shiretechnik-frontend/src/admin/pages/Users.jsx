@@ -178,12 +178,12 @@ function Users() {
                           >
                             <UserCog size={12} /> Role
                           </button>
-                          <button
+                          {/* <button
                             onClick={() => remove(u.id)}
                             className="flex h-7 w-7 items-center justify-center rounded-lg border border-red-500/20 bg-red-500/[0.06] text-red-400 transition hover:bg-red-500/[0.12]"
                           >
                             <Trash2 size={12} />
-                          </button>
+                          </button> */}
                         </div>
                       </td>
                     </tr>
