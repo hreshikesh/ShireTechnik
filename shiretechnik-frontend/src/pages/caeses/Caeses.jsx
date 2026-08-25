@@ -422,19 +422,12 @@ const CAESES = () => {
               </h1>
 
               <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-400 sm:text-base sm:leading-8 md:mt-7">
-                Caeses is a authorized patner of  Shiretechnik and co-patner of Sandebtech.CAESES is a dedicated software platform for geometry modeling
-                and simulation-driven design optimization. It enables engineers
-                to create parametric 3D models, set up automated simulation
-                workflows, and perform shape optimization to develop
-                high-performance products faster and more efficiently.
+                CAESES  is a dedicated software platform for geometry modeling and simulation-driven design optimization. It enables engineers to create parametric 3D models, set up automated simulation workflows, and perform shape optimization to develop high-performance products faster and more efficiently.
+
+                As an authorized partner, Shiretechnik provides CAESES software licensing, implementation support, training, and consulting services to help engineering teams maximize the value of simulation-driven design
               </p>
 
-              <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-400 sm:text-base sm:leading-8">
-                As an authorized partner, Shire Technik provides CAESES
-                software licensing, implementation support, training, and
-                consulting services to help engineering teams maximize the value
-                of simulation-driven design.
-              </p>
+
 
               {/* CTA row */}
               <div className="mt-8 flex flex-wrap gap-3 md:mt-10">
@@ -530,8 +523,8 @@ const CAESES = () => {
                 key={tab.id}
                 onClick={() => scrollTo(tab.id)}
                 className={`relative shrink-0 px-4 py-4 text-[11px] font-medium tracking-[0.08em] transition-colors duration-300 sm:px-5 sm:text-xs ${activeTab === tab.id
-                    ? "text-cyan-400"
-                    : "text-slate-500 hover:text-slate-300"
+                  ? "text-cyan-400"
+                  : "text-slate-500 hover:text-slate-300"
                   }`}
               >
                 {tab.label}
@@ -1018,7 +1011,9 @@ const CAESES = () => {
                 <ExternalLink size={13} />
               </a>
             </div>
-
+            <div>
+              <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-400 sm:text-base sm:leading-8 md:mt-7">Sandebtech Pvt. Ltd. also promotes CAESES software and  its sales</p>
+            </div>
             <div className="mx-auto mt-10 h-px w-24 bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent" />
           </motion.div>
         </div>
