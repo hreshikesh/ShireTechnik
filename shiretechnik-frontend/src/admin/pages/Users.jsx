@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import {
   Search,
   Shield,
-  Trash2,
+ 
   Eye,
   UserCog,
   Loader2,
@@ -10,7 +10,7 @@ import {
   AlertTriangle,
   X,
 } from "lucide-react";
-import { getUsers, deleteUser, updateUserRole } from "../service/adminApi";
+import { getUsers,  updateUserRole } from "../service/adminApi";
 
 function Users() {
   const [users, setUsers] = useState([]);
@@ -50,17 +50,17 @@ function Users() {
     }
   };
 
-  const remove = async (id) => {
-    if (!window.confirm("Permanently delete this user account? This cannot be undone."))
-      return;
-    try {
-      await deleteUser(id);
-      if (selectedUser?.id === id) setSelectedUser(null);
-      loadUsers();
-    } catch (err) {
-      console.error(err);
-    }
-  };
+  // const remove = async (id) => {
+  //   if (!window.confirm("Permanently delete this user account? This cannot be undone."))
+  //     return;
+  //   try {
+  //     await deleteUser(id);
+  //     if (selectedUser?.id === id) setSelectedUser(null);
+  //     loadUsers();
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // };
 
   if (loading) {
     return (
