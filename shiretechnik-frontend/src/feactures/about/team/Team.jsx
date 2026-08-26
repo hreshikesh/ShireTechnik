@@ -297,7 +297,7 @@ const Team = () => {
             >
               <div className="mb-4 flex items-center justify-center gap-3 text-[10px] tracking-[0.35em] text-cyan-400">
                 <span className="h-px w-10 bg-cyan-400" />
-                ADVISORY BOARD
+                Mentor
                 <span className="h-px w-10 bg-cyan-400" />
               </div>
               <h3 className="text-3xl font-semibold tracking-[-0.03em] md:text-4xl">

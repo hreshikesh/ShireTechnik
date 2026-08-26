@@ -18,7 +18,7 @@ const categories = [
   { id: "all", label: "All Documents", count: caseStudies.length },
   {
     id: "thermal",
-    label: "Thermal CFD CAE",
+    label: "Thermal",
     count: caseStudies.filter((c) => c.categoryId === "thermal").length,
   },
   {
