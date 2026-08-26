@@ -30,8 +30,8 @@ function LoginModal({ open, onClose }) {
       setLoading(true);
       const result = await sendOTP(email);
 
-      if (!result.success) {
-        setError(result.message);
+      if (!result?.success) {
+        setError(result?.message || "Failed to send OTP.");
         return;
       }
 
@@ -87,8 +87,12 @@ function LoginModal({ open, onClose }) {
 
           {/* Logo */}
           <div className="mb-6 flex justify-center">
-            <div className="flex h-25 w-30 items-center justify-center rounded-2xl  p-2">
-              <img src={Logo} alt="Shiretechnik" className="h-full w-full object-contain" />
+            <div className="flex h-25 w-30 items-center justify-center rounded-2xl p-2">
+              <img
+                src={Logo}
+                alt="SandebTech"
+                className="h-full w-full object-contain"
+              />
             </div>
           </div>
 
@@ -96,12 +100,16 @@ function LoginModal({ open, onClose }) {
           <div className="mb-6 text-center">
             <div className="mb-2 flex items-center justify-center gap-2">
               <span className="h-px w-6 bg-cyan-400" />
-              <span className="text-[9px] tracking-[0.3em] text-cyan-400">SHIRETECHNIK </span>
+              <span className="text-[9px] tracking-[0.3em] text-cyan-400">
+                SANDEBTECH
+              </span>
               <span className="h-px w-6 bg-cyan-400" />
             </div>
-            <h2 className="text-xl font-semibold tracking-[-0.03em] text-cyan-500">Welcome Back</h2>
+            <h2 className="text-xl font-semibold tracking-[-0.03em] text-cyan-500">
+              Welcome Back
+            </h2>
             <p className="mt-1.5 text-sm text-slate-500">
-              Sign in to continue using Shiretechnik.
+              Sign in to continue using SandebTech.
             </p>
           </div>
 
@@ -122,9 +130,7 @@ function LoginModal({ open, onClose }) {
             />
           </div>
 
-          {error && (
-            <p className="mt-2 text-[11px] text-red-400">{error}</p>
-          )}
+          {error && <p className="mt-2 text-[11px] text-red-400">{error}</p>}
 
           {/* Button */}
           <button

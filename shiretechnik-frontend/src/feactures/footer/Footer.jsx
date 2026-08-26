@@ -103,7 +103,7 @@ const Footer = () => {
             <motion.a
               whileHover={{ scale: 1.1, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              href="https://www.youtube.com/@shiretechnik"
+              href="https://www.youtube.com/@shiretechniksolutionspvt.l715"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="YouTube"

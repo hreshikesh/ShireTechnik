@@ -21,7 +21,10 @@ function OTPModal({ open, email, otp, setOtp, loading, onClose, onResend }) {
 
     const interval = setInterval(() => {
       setTimer((prev) => {
-        if (prev <= 1) { clearInterval(interval); return 0; }
+        if (prev <= 1) {
+          clearInterval(interval);
+          return 0;
+        }
         return prev - 1;
       });
     }, 1000);
@@ -56,7 +59,9 @@ function OTPModal({ open, email, otp, setOtp, loading, onClose, onResend }) {
       }
 
       if (!result.newUser) {
-        if (result.token) localStorage.setItem("token", result.token);
+        if (result.token) {
+          sessionStorage.setItem("token", result.token);
+        }
         login(result.userResponse);
         setOtpOpen(false);
         setSuccessOpen(true);
@@ -66,7 +71,9 @@ function OTPModal({ open, email, otp, setOtp, loading, onClose, onResend }) {
       setOtpOpen(false);
       setRegisterOpen(true);
     } catch (err) {
-      setError(err?.response?.data?.message || "Something went wrong. Please try again.");
+      setError(
+        err?.response?.data?.message || "Something went wrong. Please try again."
+      );
     } finally {
       setVerifying(false);
     }
@@ -110,8 +117,12 @@ function OTPModal({ open, email, otp, setOtp, loading, onClose, onResend }) {
 
             {/* Logo */}
             <div className="mb-6 flex justify-center">
-              <div className="flex h-25 w-30 items-center justify-center rounded-2xl  p-2">
-                <img src={Logo} alt="Shiretechnik" className="h-full w-full object-contain" />
+              <div className="flex h-25 w-30 items-center justify-center rounded-2xl p-2">
+                <img
+                  src={Logo}
+                  alt="SandebTech"
+                  className="h-full w-full object-contain"
+                />
               </div>
             </div>
 
@@ -119,10 +130,14 @@ function OTPModal({ open, email, otp, setOtp, loading, onClose, onResend }) {
             <div className="mb-6 text-center">
               <div className="mb-2 flex items-center justify-center gap-2">
                 <span className="h-px w-6 bg-cyan-400" />
-                <span className="text-[9px] tracking-[0.3em] text-cyan-400">VERIFY EMAIL</span>
+                <span className="text-[9px] tracking-[0.3em] text-cyan-400">
+                  VERIFY EMAIL
+                </span>
                 <span className="h-px w-6 bg-cyan-400" />
               </div>
-              <h2 className="text-xl font-semibold tracking-[-0.03em] text-cyan-400">Check Your Inbox</h2>
+              <h2 className="text-xl font-semibold tracking-[-0.03em] text-cyan-400">
+                Check Your Inbox
+              </h2>
               <p className="mt-1.5 text-sm text-slate-500">
                 We've sent a 6-digit code to{" "}
                 <span className="text-white">{email}</span>
@@ -133,11 +148,15 @@ function OTPModal({ open, email, otp, setOtp, loading, onClose, onResend }) {
             <div className="mb-6 flex flex-col items-center gap-1.5">
               <div className="flex items-center gap-2 rounded-full border border-white/[0.06] bg-[#05080d] px-3 py-1.5">
                 <Mail size={11} className="text-cyan-400" />
-                <span className="text-[10px] text-slate-500">Check your spam folder if not visible</span>
+                <span className="text-[10px] text-slate-500">
+                  Check your spam folder if not visible
+                </span>
               </div>
               <div className="flex items-center gap-2 rounded-full border border-white/[0.06] bg-[#05080d] px-3 py-1.5">
                 <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
-                <span className="text-[10px] text-slate-500">OTP valid for 5 minutes</span>
+                <span className="text-[10px] text-slate-500">
+                  OTP valid for 5 minutes
+                </span>
               </div>
             </div>
 

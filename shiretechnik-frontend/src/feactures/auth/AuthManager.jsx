@@ -7,57 +7,46 @@ import { useAuth } from "../../context/AuthContext";
 import { sendOTP } from "../../service/authService";
 
 function AuthManager() {
+  const auth = useAuth();
 
-    const auth = useAuth();
+  return (
+    <>
+      <LoginModal
+        open={auth.loginOpen}
+        email={auth.email}
+        setEmail={auth.setEmail}
+        onClose={auth.closeAll}
+      />
 
-    return (
-        <>
+      <OTPModal
+        open={auth.otpOpen}
+        email={auth.email}
+        otp={auth.otp}
+        setOtp={auth.setOtp}
+        onClose={auth.closeAll}
+        onResend={() => sendOTP(auth.email)}
+      />
 
-            <LoginModal
-                open={auth.loginOpen}
-                email={auth.email}
-                setEmail={auth.setEmail}
-                onClose={auth.closeAll}
-            />
+      <RegisterModal
+        open={auth.registerOpen}
+        loading={false}
+        onClose={auth.closeAll}
+        onFinish={(data) => {
+          auth.login(data);
+          auth.setRegisterOpen(false);
+          auth.setSuccessOpen(true);
+        }}
+      />
 
-            <OTPModal
-                open={auth.otpOpen}
-                email={auth.email}
-                otp={auth.otp}
-                setOtp={auth.setOtp}
-                onClose={auth.closeAll}
-                onResend={() => sendOTP(auth.email)}
-            />
-
-            <RegisterModal
-                open={auth.registerOpen}
-                loading={false}
-                onClose={auth.closeAll}
-                onFinish={(data) => {
-
-                    auth.login(data);
-
-                    auth.setRegisterOpen(false);
-
-                    auth.setSuccessOpen(true);
-
-                }}
-            />
-
-            <SuccessModal
-                open={auth.successOpen}
-                userName={auth.user?.name}
-                onFinish={() => {
-
-                    auth.closeAll();
-
-                   
-
-                }}
-            />
-
-        </>
-    );
+      <SuccessModal
+        open={auth.successOpen}
+        userName={auth.user?.name}
+        onFinish={() => {
+          auth.closeAll();
+        }}
+      />
+    </>
+  );
 }
 
 export default AuthManager;

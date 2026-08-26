@@ -12,33 +12,15 @@ import {
   PlayCircle,
   RefreshCw,
   Layers,
-  Cpu,
-  Ship,
   ChevronRight,
   X,
 } from "lucide-react";
 import SEO from "../../seo/SEO";
 import { seoPages } from "../../seo/seoConfig";
+
 const rawWebinarsData = [
   {
-    id: "webinar-2",
-    product: "SHIPFLOW",
-    category: "SHIPFLOW",
-    icon: Ship,
-    title: "SHIPFLOW Public & Custom Training — Ship Hydrodynamics CFD",
-    description:
-      "FLOWTECH International runs recurring public and custom training on SHIPFLOW's RANS, potential-flow, and SHIPFLOW MOTIONS solvers, covering resistance, self-propulsion, and seakeeping workflows for naval architects.",
-    date: "Ongoing schedule",
-    time: "Varies by region",
-    duration: "Varies",
-    speaker: "FLOWTECH SHIPFLOW Applications Team",
-    status: "On-Demand",
-    registrationUrl: "https://shipflow.se/shipflow-training/",
-    featured: false,
-    tags: ["Marine CFD", "FLOWTECH", "Hydrodynamics"],
-  },
-  {
-    id: "webinar-3",
+    id: "webinar-caeses-1",
     product: "CAESES",
     category: "CAESES",
     icon: Layers,
@@ -52,33 +34,14 @@ const rawWebinarsData = [
     status: "On-Demand",
     registrationUrl:
       "https://www.caeses.com/north-america-user-conference-2026/",
-    featured: false,
+    featured: true,
     tags: ["Parametric CAD", "Maya HTT", "Shape Optimization"],
-  },
-  {
-    id: "webinar-4",
-    product: "TCAE",
-    category: "TCAE",
-    icon: Cpu,
-    title: "Webinar 96 — New TCAE 26.03 Introduction",
-    description:
-      "CFD SUPPORT introduces the TCAE 26.03 release: improvements to multiphase simulation, numerical robustness, parallel scalability, and mesh-interface workflows for turbomachinery and rotating equipment.",
-    date: "April 9, 2026",
-    time: "2:00 PM CEST",
-    duration: "60 Mins",
-    speaker: "CFD SUPPORT Team",
-    status: "On-Demand",
-    registrationUrl: "https://www.cfdsupport.com/webinars/",
-    featured: false,
-    tags: ["CFD SUPPORT", "Turbomachinery", "TCAE"],
   },
 ];
 
 const categories = [
   { id: "all", name: "All Webinars", icon: null },
-  { id: "SHIPFLOW", name: "SHIPFLOW", icon: Ship },
   { id: "CAESES", name: "CAESES", icon: Layers },
-  { id: "TCAE", name: "TCAE", icon: Cpu },
 ];
 
 const WebinarsPage = () => {
@@ -137,6 +100,7 @@ const WebinarsPage = () => {
   return (
     <main className="overflow-hidden bg-[#05080d] text-white">
       <SEO {...seoPages.WebinarsPage} />
+
       <section className="relative py-14 md:py-24 lg:py-28">
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.025]"
@@ -155,9 +119,19 @@ const WebinarsPage = () => {
             transition={{ duration: 0.4 }}
             className="mb-8 flex flex-wrap items-center gap-1.5 text-[11px] text-slate-600"
           >
-            <button onClick={() => navigate("/")} className="transition hover:text-cyan-400">Home</button>
+            <button
+              onClick={() => navigate("/")}
+              className="transition hover:text-cyan-400"
+            >
+              Home
+            </button>
             <ChevronRight size={11} />
-            <button onClick={() => navigate("/resources")} className="transition hover:text-cyan-400">Resources</button>
+            <button
+              onClick={() => navigate("/resources")}
+              className="transition hover:text-cyan-400"
+            >
+              Resources
+            </button>
             <ChevronRight size={11} />
             <span className="text-cyan-400">Webinars</span>
           </motion.nav>
@@ -170,7 +144,7 @@ const WebinarsPage = () => {
           >
             <span className="h-px w-10 bg-cyan-400" />
             <span className="text-[10px] font-medium tracking-[0.35em] text-cyan-400">
-              RESOURCES — WEBINARS
+              RESOURCES — CAESES WEBINARS
             </span>
           </motion.div>
 
@@ -180,7 +154,7 @@ const WebinarsPage = () => {
             transition={{ duration: 0.7 }}
             className="max-w-4xl text-3xl font-semibold leading-[1.06] tracking-[-0.045em] sm:text-4xl md:text-5xl lg:text-6xl"
           >
-            Engineering Webinars &{" "}
+            CAESES Webinars &{" "}
             <span className="text-cyan-400">Masterclasses</span>
           </motion.h1>
 
@@ -190,9 +164,9 @@ const WebinarsPage = () => {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="mt-5 max-w-2xl text-sm leading-7 text-slate-400 sm:text-base sm:leading-8 md:mt-7"
           >
-            Deep-dive technical sessions hosted by leading simulation vendors.
-            Learn advanced workflows, solve complex modeling challenges, and
-            watch past recordings.
+            Deep-dive technical sessions on parametric modeling, shape
+            optimization, and automation with CAESES. Learn advanced workflows
+            and watch past recordings from FRIENDSHIP SYSTEMS / Maya HTT.
           </motion.p>
 
           {/* Search */}
@@ -205,7 +179,7 @@ const WebinarsPage = () => {
             <Search size={18} className="shrink-0 text-slate-600" />
             <input
               type="text"
-              placeholder="Search topics, speakers, products (e.g. SHIPFLOW)..."
+              placeholder="Search CAESES topics, speakers, workshops..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="flex-1 bg-transparent text-sm text-white placeholder-slate-600 outline-none"
@@ -223,8 +197,7 @@ const WebinarsPage = () => {
       </section>
 
       <div className="mx-auto max-w-[1400px] px-5 sm:px-6 md:px-10">
-
-        {/* ── FEATURED WEBINAR ── */}
+        {/* Featured */}
         {showFeatured && (
           <motion.section
             initial={{ opacity: 0, y: 22 }}
@@ -234,7 +207,6 @@ const WebinarsPage = () => {
             className="mb-10 md:mb-14"
           >
             <div className="overflow-hidden rounded-2xl border border-cyan-400/10 bg-[#071019] sm:rounded-3xl">
-              {/* Top strip */}
               <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/[0.06] px-5 py-3 sm:px-7">
                 <div className="flex items-center gap-2.5">
                   <span className="relative flex h-2 w-2">
@@ -257,7 +229,6 @@ const WebinarsPage = () => {
                 </div>
               </div>
 
-              {/* Body */}
               <div className="p-5 sm:p-7 md:p-10">
                 <h2 className="max-w-3xl text-xl font-semibold tracking-[-0.03em] sm:text-2xl md:text-3xl">
                   {featuredItem.title}
@@ -269,14 +240,18 @@ const WebinarsPage = () => {
                 <div className="mt-5 flex items-center gap-2 text-sm text-slate-500">
                   <User size={14} />
                   <span>
-                    Hosted by: <span className="text-white">{featuredItem.speaker}</span>
+                    Hosted by:{" "}
+                    <span className="text-white">{featuredItem.speaker}</span>
                   </span>
                 </div>
 
                 <div className="mt-7 flex flex-wrap items-center justify-between gap-4 border-t border-white/[0.06] pt-6">
                   <div className="flex flex-wrap gap-2">
                     {featuredItem.tags.map((tag) => (
-                      <span key={tag} className="rounded-full border border-white/10 px-3 py-1 text-[10px] text-slate-500">
+                      <span
+                        key={tag}
+                        className="rounded-full border border-white/10 px-3 py-1 text-[10px] text-slate-500"
+                      >
                         {tag}
                       </span>
                     ))}
@@ -288,7 +263,10 @@ const WebinarsPage = () => {
                     className="group flex items-center gap-2 rounded-xl bg-cyan-400 px-6 py-2.5 text-sm font-medium text-[#05080d] transition hover:bg-cyan-300"
                   >
                     {featuredIsUpcoming ? "Secure Your Spot" : "View Session"}
-                    <ArrowUpRight size={15} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                    <ArrowUpRight
+                      size={15}
+                      className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                    />
                   </a>
                 </div>
               </div>
@@ -296,7 +274,7 @@ const WebinarsPage = () => {
           </motion.section>
         )}
 
-        {/* ── FILTERS ── */}
+        {/* Filters */}
         <motion.section
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -304,42 +282,42 @@ const WebinarsPage = () => {
           transition={{ duration: 0.5 }}
           className="mb-8 md:mb-10"
         >
-          {/* Top row */}
-          <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
+          <div className="mb-4 flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-2 text-xs text-slate-500">
               <Filter size={15} className="text-cyan-400" />
-              <span className="tracking-[0.1em]">Filter by Software Suite</span>
+              <span className="tracking-[0.1em]">Filter CAESES Sessions</span>
             </div>
 
             <div className="flex flex-wrap items-center gap-3">
-              {/* Status toggle */}
               <div className="flex overflow-hidden rounded-lg border border-white/[0.07]">
                 {["all", "Upcoming", "On-Demand"].map((status) => (
                   <button
                     key={status}
                     onClick={() => setStatusFilter(status)}
-                    className={`px-3.5 py-2 text-[10px] font-medium tracking-[0.08em] transition-all duration-300 sm:text-[11px] ${statusFilter === status
+                    className={`px-3.5 py-2 text-[10px] font-medium tracking-[0.08em] transition-all duration-300 sm:text-[11px] ${
+                      statusFilter === status
                         ? "bg-cyan-400/[0.1] text-cyan-400"
                         : "text-slate-500 hover:bg-white/[0.03] hover:text-slate-300"
-                      }`}
+                    }`}
                   >
                     {status === "all" ? "All" : status}
                   </button>
                 ))}
               </div>
 
-              {/* Refresh */}
               <button
                 onClick={handleRefresh}
                 className="flex items-center gap-1.5 rounded-lg border border-white/[0.07] px-3 py-2 text-[10px] font-medium text-slate-500 transition hover:border-cyan-400/20 hover:text-cyan-400 sm:text-[11px]"
               >
-                <RefreshCw size={12} className={loading ? "animate-spin" : ""} />
+                <RefreshCw
+                  size={12}
+                  className={loading ? "animate-spin" : ""}
+                />
                 Refresh
               </button>
             </div>
           </div>
 
-          {/* Category tabs */}
           <div className="flex flex-wrap gap-2">
             {categories.map((cat) => {
               const Icon = cat.icon;
@@ -347,10 +325,11 @@ const WebinarsPage = () => {
                 <button
                   key={cat.id}
                   onClick={() => setSelectedCategory(cat.id)}
-                  className={`flex items-center gap-2 rounded-xl border px-4 py-2.5 text-[11px] font-medium tracking-[0.06em] transition-all duration-300 sm:text-xs ${selectedCategory === cat.id
+                  className={`flex items-center gap-2 rounded-xl border px-4 py-2.5 text-[11px] font-medium tracking-[0.06em] transition-all duration-300 sm:text-xs ${
+                    selectedCategory === cat.id
                       ? "border-cyan-400/30 bg-cyan-400/[0.08] text-cyan-400"
                       : "border-white/[0.07] text-slate-500 hover:border-white/[0.12] hover:text-slate-300"
-                    }`}
+                  }`}
                 >
                   {Icon && <Icon size={14} />}
                   {cat.name}
@@ -360,12 +339,15 @@ const WebinarsPage = () => {
           </div>
         </motion.section>
 
-        {/* ── WEBINAR CARDS ── */}
+        {/* Cards */}
         <section className="mb-16 md:mb-20">
           {loading ? (
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {[1, 2, 3].map((n) => (
-                <div key={n} className="flex flex-col gap-4 rounded-2xl border border-white/[0.07] bg-[#071019] p-6">
+                <div
+                  key={n}
+                  className="flex flex-col gap-4 rounded-2xl border border-white/[0.07] bg-[#071019] p-6"
+                >
                   <div className="h-4 w-24 animate-pulse rounded bg-white/[0.06]" />
                   <div className="h-3 w-36 animate-pulse rounded bg-white/[0.04]" />
                   <div className="h-5 w-full animate-pulse rounded bg-white/[0.06]" />
@@ -388,7 +370,6 @@ const WebinarsPage = () => {
                     transition={{ duration: 0.45, delay: i * 0.08 }}
                     className="group flex flex-col rounded-2xl border border-white/[0.07] bg-[#071019] transition-all duration-300 hover:border-cyan-400/20"
                   >
-                    {/* Header */}
                     <div className="flex items-center justify-between border-b border-white/[0.06] px-5 py-3">
                       <div className="flex items-center gap-2">
                         <div className="flex h-7 w-7 items-center justify-center rounded-lg border border-cyan-400/20 bg-cyan-400/[0.06] text-cyan-400">
@@ -399,17 +380,21 @@ const WebinarsPage = () => {
                         </span>
                       </div>
                       <span
-                        className={`flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[9px] font-medium tracking-[0.08em] ${isUpcoming
+                        className={`flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[9px] font-medium tracking-[0.08em] ${
+                          isUpcoming
                             ? "border-emerald-500/20 bg-emerald-500/[0.06] text-emerald-400"
                             : "border-white/10 bg-white/[0.03] text-slate-500"
-                          }`}
+                        }`}
                       >
-                        {isUpcoming ? <Video size={10} /> : <PlayCircle size={10} />}
+                        {isUpcoming ? (
+                          <Video size={10} />
+                        ) : (
+                          <PlayCircle size={10} />
+                        )}
                         {item.status}
                       </span>
                     </div>
 
-                    {/* Body */}
                     <div className="flex flex-1 flex-col px-5 pb-5 pt-4">
                       <div className="mb-3 flex items-center gap-3 text-[11px] text-slate-600">
                         <span className="flex items-center gap-1">
@@ -433,29 +418,37 @@ const WebinarsPage = () => {
                         <span className="truncate">{item.speaker}</span>
                       </div>
 
-                      {/* Tags */}
                       <div className="mt-4 flex flex-wrap gap-1.5">
                         {item.tags.map((t) => (
-                          <span key={t} className="rounded-full border border-white/[0.06] px-2.5 py-0.5 text-[9px] text-slate-600">
+                          <span
+                            key={t}
+                            className="rounded-full border border-white/[0.06] px-2.5 py-0.5 text-[9px] text-slate-600"
+                          >
                             #{t}
                           </span>
                         ))}
                       </div>
                     </div>
 
-                    {/* Footer */}
                     <div className="border-t border-white/[0.06] px-5 py-4">
                       <a
                         href={item.registrationUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`flex w-full items-center justify-center gap-2 rounded-xl py-2.5 text-sm font-medium transition-all duration-300 ${isUpcoming
+                        className={`flex w-full items-center justify-center gap-2 rounded-xl py-2.5 text-sm font-medium transition-all duration-300 ${
+                          isUpcoming
                             ? "bg-cyan-400 text-[#05080d] hover:bg-cyan-300"
                             : "border border-white/10 text-slate-400 hover:border-cyan-400/20 hover:text-cyan-400"
-                          }`}
+                        }`}
                       >
-                        {isUpcoming ? "Register for Live Session" : "Watch Recorded Session"}
-                        {isUpcoming ? <ArrowUpRight size={14} /> : <PlayCircle size={14} />}
+                        {isUpcoming
+                          ? "Register for Live Session"
+                          : "Watch Recorded Session"}
+                        {isUpcoming ? (
+                          <ArrowUpRight size={14} />
+                        ) : (
+                          <PlayCircle size={14} />
+                        )}
                       </a>
                     </div>
                   </motion.article>
@@ -486,7 +479,7 @@ const WebinarsPage = () => {
           )}
         </section>
 
-        {/* ── QUICK LINKS BANNER ── */}
+        {/* Archives — CAESES only */}
         <motion.section
           initial={{ opacity: 0, y: 22 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -501,46 +494,42 @@ const WebinarsPage = () => {
                   ARCHIVES
                 </span>
                 <h3 className="mt-3 text-xl font-semibold sm:text-2xl">
-                  Official Webinar Archives
+                  Official CAESES Webinar Archives
                 </h3>
                 <p className="mt-2 max-w-lg text-sm leading-7 text-slate-500">
-                  Explore comprehensive recorded libraries across all software
-                  suites directly.
+                  Explore recorded libraries, user conferences, and workshops
+                  from FRIENDSHIP SYSTEMS / Maya HTT.
                 </p>
               </div>
 
               <div className="flex flex-wrap gap-3">
-                {[
-                  {
-                    icon: Ship,
-                    label: "SHIPFLOW Training",
-                    url: "https://shipflow.se/shipflow-training/",
-                  },
-                  {
-                    icon: Layers,
-                    label: "CAESES / Maya HTT",
-                    url: "https://www.friendship-systems.com/",
-                  },
-                  {
-                    icon: Cpu,
-                    label: "TCAE Webinars",
-                    url: "https://www.cfdsupport.com/webinars/",
-                  },
-                ].map((link) => {
-                  const LIcon = link.icon;
-                  return (
-                    <a
-                      key={link.label}
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2.5 rounded-xl border border-white/[0.07] bg-[#05080d] px-5 py-3 text-sm text-slate-400 transition-all duration-300 hover:border-cyan-400/20 hover:text-cyan-400"
-                    >
-                      <LIcon size={15} />
-                      {link.label}
-                    </a>
-                  );
-                })}
+                <a
+                  href="https://www.caeses.com/north-america-user-conference-2026/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2.5 rounded-xl border border-white/[0.07] bg-[#05080d] px-5 py-3 text-sm text-slate-400 transition-all duration-300 hover:border-cyan-400/20 hover:text-cyan-400"
+                >
+                  <Layers size={15} />
+                  CAESES User Conference
+                </a>
+                <a
+                  href="https://www.caeses.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2.5 rounded-xl border border-white/[0.07] bg-[#05080d] px-5 py-3 text-sm text-slate-400 transition-all duration-300 hover:border-cyan-400/20 hover:text-cyan-400"
+                >
+                  <Layers size={15} />
+                  CAESES Official
+                </a>
+                <a
+                  href="https://www.friendship-systems.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2.5 rounded-xl border border-white/[0.07] bg-[#05080d] px-5 py-3 text-sm text-slate-400 transition-all duration-300 hover:border-cyan-400/20 hover:text-cyan-400"
+                >
+                  <Layers size={15} />
+                  FRIENDSHIP SYSTEMS / Maya HTT
+                </a>
               </div>
             </div>
           </div>
