@@ -10,7 +10,7 @@ import sarang from "../assets/images/about/sarang.webp";
 export const teamData = [
   {
     id: 1,
-    name: "Debasis Panda",
+    name: "Mr.Debasis Panda",
     designation: "Founder Director, CEO",
     image: debasisImage,
     linkedin: "https://www.linkedin.com/in/debasis-panda-a87a245/",
@@ -18,7 +18,7 @@ export const teamData = [
   },
   {
     id: 2,
-    name: "Shankar S",
+    name: "Mr.Shankar S",
     designation: "Director",
     image: shankarImage,
     linkedin: "https://www.linkedin.com/in/shankar-s-ba388533/",
@@ -26,7 +26,7 @@ export const teamData = [
   },
   {
     id: 3,
-    name: "Archan Chatterjee",
+    name: "Mr.Archan Chatterjee",
     designation: "Director",
     image: archan,
     linkedin: "https://www.linkedin.com/in/archan-chatterjee-45083769/",
@@ -34,7 +34,7 @@ export const teamData = [
   },
   {
     id: 4,
-    name: "Sandeep Nandi",
+    name: "Mr.Sandeep Nandi",
     designation: "Principal Consultant IT and AI",
     image: sandeep,
     linkedin: "https://www.linkedin.com/in/sandeep-nandi-06409310/",
@@ -42,7 +42,7 @@ export const teamData = [
   },
   {
     id: 5,
-    name: "Pranjal Mishra",
+    name: "Mr.Pranjal Mishra",
     designation: "CAE Engineer",
     image: pranjal,
     linkedin: "https://www.linkedin.com/in/pranjal-m11/",
@@ -50,7 +50,7 @@ export const teamData = [
   },
   {
     id: 6,
-    name: "Pradeep Kunta",
+    name: "Mr.Pradeep Kunta",
     designation: "Service Engineer",
     image: pradeep,
     linkedin: "https://www.linkedin.com/in/pradeep-reddy-883b6715b/",
@@ -62,7 +62,7 @@ export const teamData = [
 export const advisor=[
    {
     id: 1,
-    name: "Sarang Shidore",
+    name: "Mr.Sarang Shidore",
     designation: "Advisory",
     image: sarang,
     linkedin: "https://www.linkedin.com/in/sarangshidore/",
