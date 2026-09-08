@@ -56,7 +56,7 @@ export const caseStudies = [
     category: "PCB Thermal Modelling",
     categoryId: "whitepaper",
     title:
-      "Thermal Vias Modeling for Simulation",
+      "PCB Thermal Modeling for Simulation",
     description:
       "This Paper elaborates about the different PCB (Printed Circuit Board) modelling approaches that are widely used in thermal simulation analysis and also examine their accuracy for the temperature predictions. ",
     tags: [" Thermal Conductivity", "PCB","Isotropic Conductivity ","Orthotropic Thermal Conductivity "],
