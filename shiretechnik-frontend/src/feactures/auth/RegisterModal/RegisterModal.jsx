@@ -102,7 +102,7 @@ function RegisterModal({ open, loading }) {
       return;
     }
 
-    if (result.token) localStorage.setItem("token", result.token);
+    if (result.token) sessionStorage.setItem("token", result.token);
     login(userData);
     setRegisterOpen(false);
     setSuccessOpen(true);

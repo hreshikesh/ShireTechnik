@@ -1,4 +1,11 @@
-import { createContext, useContext, useEffect, useState, useCallback } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  useCallback,
+  useMemo,
+} from "react";
 
 export const AuthContext = createContext();
 
@@ -8,8 +15,16 @@ const SESSION_START_KEY = "session_start_time";
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(() => {
-    const storedUser = sessionStorage.getItem(USER_KEY);
-    return storedUser ? JSON.parse(storedUser) : null;
+    try {
+      const storedUser = sessionStorage.getItem(USER_KEY);
+      return storedUser ? JSON.parse(storedUser) : null;
+    } catch {
+      return null;
+    }
+  });
+
+  const [token, setToken] = useState(() => {
+    return sessionStorage.getItem(TOKEN_KEY) || null;
   });
 
   const [pendingAction, setPendingAction] = useState(null);
@@ -20,36 +35,49 @@ export function AuthProvider({ children }) {
   const [email, setEmail] = useState("");
   const [otp, setOtp] = useState(["", "", "", "", "", ""]);
 
-  const login = useCallback((userData) => {
-    // Clear old session
-    sessionStorage.clear();
+ const login = useCallback((userData) => {
+    sessionStorage.setItem(
+        SESSION_START_KEY,
+        Date.now().toString()
+    );
 
-    // Set session start
-    sessionStorage.setItem(SESSION_START_KEY, Date.now().toString());
+    sessionStorage.setItem(
+        USER_KEY,
+        JSON.stringify(userData)
+    );
 
-    // Store user and token in sessionStorage only
-    sessionStorage.setItem(USER_KEY, JSON.stringify(userData));
+    const extractedToken =
+        userData?.token ||
+        userData?.accessToken ||
+        null;
 
-    if (userData.token) {
-      sessionStorage.setItem(TOKEN_KEY, userData.token);
+    if (extractedToken) {
+        sessionStorage.setItem(TOKEN_KEY, extractedToken);
+        setToken(extractedToken);
+    } else {
+        sessionStorage.removeItem(TOKEN_KEY);
+        setToken(null);
     }
 
     setUser(userData);
-  }, []);
-
+}, []);
   const logout = useCallback(() => {
-    // Clear sessionStorage & any old sessionStorage remnants
-    sessionStorage.clear();
+    // Session-only cleanup
     sessionStorage.removeItem(USER_KEY);
     sessionStorage.removeItem(TOKEN_KEY);
     sessionStorage.removeItem(SESSION_START_KEY);
+    // Or wipe entire tab session:
+    // sessionStorage.clear();
 
-    // Reset state
     setUser(null);
+    setToken(null);
     setLoginOpen(false);
     setOtpOpen(false);
     setRegisterOpen(false);
     setSuccessOpen(false);
+    setEmail("");
+    setOtp(["", "", "", "", "", ""]);
+    setPendingAction(null);
   }, []);
 
   const getSessionStartTime = useCallback(() => {
@@ -61,70 +89,92 @@ export function AuthProvider({ children }) {
     (maxSessionTime) => {
       const startTime = getSessionStartTime();
       if (!startTime) return false;
-      const elapsed = Date.now() - startTime;
-      return elapsed < maxSessionTime;
+      return Date.now() - startTime < maxSessionTime;
     },
     [getSessionStartTime]
   );
 
-  // Force logout event listener
   useEffect(() => {
     const forceLogout = () => logout();
     window.addEventListener("forceLogout", forceLogout);
     return () => window.removeEventListener("forceLogout", forceLogout);
   }, [logout]);
 
-  const executePendingAction = () => {
+  const executePendingAction = useCallback(() => {
     if (pendingAction) {
       pendingAction();
       setPendingAction(null);
     }
-  };
+  }, [pendingAction]);
 
-  const requireAuth = (callback) => {
-    if (user) {
-      callback();
-      return;
-    }
-    setPendingAction(() => callback);
-    setLoginOpen(true);
-  };
+  const requireAuth = useCallback(
+    (callback) => {
+      if (user || token) {
+        callback();
+        return;
+      }
+      setPendingAction(() => callback);
+      setLoginOpen(true);
+    },
+    [user, token]
+  );
 
-  const openLogin = () => setLoginOpen(true);
+  const openLogin = useCallback(() => setLoginOpen(true), []);
 
-  const closeAll = () => {
+  const closeAll = useCallback(() => {
     setLoginOpen(false);
     setOtpOpen(false);
     setRegisterOpen(false);
     setSuccessOpen(false);
-  };
+  }, []);
+
+  const contextValue = useMemo(
+    () => ({
+      user,
+      token,
+      login,
+      logout,
+      requireAuth,
+      executePendingAction,
+      getSessionStartTime,
+      isSessionValid,
+      loginOpen,
+      otpOpen,
+      registerOpen,
+      successOpen,
+      setLoginOpen,
+      setOtpOpen,
+      setRegisterOpen,
+      setSuccessOpen,
+      email,
+      setEmail,
+      otp,
+      setOtp,
+      openLogin,
+      closeAll,
+    }),
+    [
+      user,
+      token,
+      login,
+      logout,
+      requireAuth,
+      executePendingAction,
+      getSessionStartTime,
+      isSessionValid,
+      loginOpen,
+      otpOpen,
+      registerOpen,
+      successOpen,
+      email,
+      otp,
+      openLogin,
+      closeAll,
+    ]
+  );
 
   return (
-    <AuthContext.Provider
-      value={{
-        user,
-        login,
-        logout,
-        requireAuth,
-        executePendingAction,
-        getSessionStartTime,
-        isSessionValid,
-        loginOpen,
-        otpOpen,
-        registerOpen,
-        successOpen,
-        setLoginOpen,
-        setOtpOpen,
-        setRegisterOpen,
-        setSuccessOpen,
-        email,
-        setEmail,
-        otp,
-        setOtp,
-        openLogin,
-        closeAll,
-      }}
-    >
+    <AuthContext.Provider value={contextValue}>
       {children}
     </AuthContext.Provider>
   );
