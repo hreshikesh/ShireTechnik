@@ -38,11 +38,11 @@ export function AuthProvider({ children }) {
   }, []);
 
   const logout = useCallback(() => {
-    // Clear sessionStorage & any old localStorage remnants
+    // Clear sessionStorage & any old sessionStorage remnants
     sessionStorage.clear();
-    localStorage.removeItem(USER_KEY);
-    localStorage.removeItem(TOKEN_KEY);
-    localStorage.removeItem(SESSION_START_KEY);
+    sessionStorage.removeItem(USER_KEY);
+    sessionStorage.removeItem(TOKEN_KEY);
+    sessionStorage.removeItem(SESSION_START_KEY);
 
     // Reset state
     setUser(null);
