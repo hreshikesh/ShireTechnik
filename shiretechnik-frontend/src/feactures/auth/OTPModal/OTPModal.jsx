@@ -59,10 +59,7 @@ function OTPModal({ open, email, otp, setOtp, loading, onClose, onResend }) {
       }
 
       if (!result.newUser) {
-        if (result.token) {
-          sessionStorage.setItem("token", result.token);
-        }
-        login(result.userResponse);
+        login({ ...result.userResponse, token: result.token });
         setOtpOpen(false);
         setSuccessOpen(true);
         return;
