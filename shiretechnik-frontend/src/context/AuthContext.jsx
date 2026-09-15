@@ -9,7 +9,7 @@ import {
 
 export const AuthContext = createContext();
 
-const USER_KEY = "sandebtech-user";
+const USER_KEY = "shire-user";
 const TOKEN_KEY = "token";
 const SESSION_START_KEY = "session_start_time";
 
